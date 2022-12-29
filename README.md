@@ -1,4 +1,8 @@
-# Nuxt 3 Minimal Starter
+# NABA Hub
+This is an area for a few tools related to the North American Baseball League discord server.
+
+# Development
+## Nuxt 3
 
 Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
@@ -30,7 +34,7 @@ npm run dev
 Build the application for production:
 
 ```bash
-npm run build
+npm run generate
 ```
 
 Locally preview production build:

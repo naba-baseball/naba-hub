@@ -3,8 +3,9 @@
     <Html data-theme="lofi" />
     <NuxtLoadingIndicator />
     <nav class="space-x-4 nav">
-      <NuxtLink class="underline" to="/">Home</NuxtLink>
-      <NuxtLink class="underline" to="/batting-stats">Batting Stats</NuxtLink>
+      <NuxtLink class="hover:underline" active-class="underline font-bold" to="/">Home</NuxtLink>
+      <NuxtLink class="hover:underline" active-class="underline font-bold" to="/batting-stats">Batting Stats</NuxtLink>
+      <a href="https://github.com/Twitch0125/naba-hub">Github</a>
     </nav>
     <NuxtPage class="page" />
   </div>
