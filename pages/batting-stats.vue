@@ -1,5 +1,5 @@
 <script setup>
-import { AgGridVue } from "ag-grid-vue3"; // the AG Grid Vue Component
+import { AgGridVue } from "@ag-grid-community/vue3"; // the AG Grid Vue Component
 const stats = ref([]);
 const { data } = await useAsyncData(() =>
   queryContent("stats")

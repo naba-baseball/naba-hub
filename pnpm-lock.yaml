@@ -1,13 +1,15 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@ag-grid-community/client-side-row-model': ^28.2.1
+  '@ag-grid-community/core': ^28.2.1
+  '@ag-grid-community/styles': ^28.2.1
+  '@ag-grid-community/vue3': ^28.2.1
   '@nuxt/content': ^2.3.0
   '@tailwindcss/forms': ^0.5.3
   '@tailwindcss/typography': ^0.5.8
   '@vueuse/core': ^9.9.0
   '@vueuse/nuxt': ^9.9.0
-  ag-grid-community: ^28.2.1
-  ag-grid-vue3: ^28.2.1
   autoprefixer: ^10.4.13
   daisyui: ^2.46.0
   nuxt: 3.0.0
@@ -15,13 +17,15 @@ specifiers:
   tailwindcss: ^3.2.4
 
 devDependencies:
+  '@ag-grid-community/client-side-row-model': 28.2.1
+  '@ag-grid-community/core': 28.2.1
+  '@ag-grid-community/styles': 28.2.1
+  '@ag-grid-community/vue3': 28.2.1
   '@nuxt/content': 2.3.0
   '@tailwindcss/forms': 0.5.3_tailwindcss@3.2.4
   '@tailwindcss/typography': 0.5.8_tailwindcss@3.2.4
   '@vueuse/core': 9.9.0
   '@vueuse/nuxt': 9.9.0_nuxt@3.0.0
-  ag-grid-community: 28.2.1
-  ag-grid-vue3: 28.2.1
   autoprefixer: 10.4.13_postcss@8.4.20
   daisyui: 2.46.0_r4gnkvssmvyxmi2wmat5xbx36a
   nuxt: 3.0.0
@@ -29,6 +33,27 @@ devDependencies:
   tailwindcss: 3.2.4_postcss@8.4.20
 
 packages:
+
+  /@ag-grid-community/client-side-row-model/28.2.1:
+    resolution: {integrity: sha512-JLLNVNAtSbVjg/h0+JqNxbRGzHR9xl3YHO4kVt8Bu0UO1XQLfGLT8wkzqQTcEOiq0pEfFTee7/BGT3oHOQfUQg==}
+    dependencies:
+      '@ag-grid-community/core': 28.2.1
+    dev: true
+
+  /@ag-grid-community/core/28.2.1:
+    resolution: {integrity: sha512-qGhqZhY8KbPlr3cJBVkNjGKu+cOyFc8IGvPcvlm0pjNC9cdxO/ct9Sa1Dg+k3ACCEroMEt1apBvnoOgurpvewQ==}
+    dev: true
+
+  /@ag-grid-community/styles/28.2.1:
+    resolution: {integrity: sha512-dy3Z46zTnzrwJOnH+tFvIvY9g/8qIi+b7XmbQlmATBr9zcNMk0wqWH1/9sNHs1fFW6m3Csvu4ctyzdr9mSw1YA==}
+    dev: true
+
+  /@ag-grid-community/vue3/28.2.1:
+    resolution: {integrity: sha512-XxVN+GinQuCbNLk1KKfSDvCSy0uMUaBdYkOvbdUQNRhYjjw07GXI2EnCGaLV7CrPuT9LzwprPfL/rQgJ8pT6pA==}
+    dependencies:
+      '@ag-grid-community/core': 28.2.1
+      vue: 3.2.45
+    dev: true
 
   /@ampproject/remapping/2.2.0:
     resolution: {integrity: sha512-qRmjj8nj9qmLTQXXmaR1cck3UXSRMPrbsLJAasZpF+t3riI71BXed5ebIOYwQntykeZuhjsdweEc9BxH5Jc26w==}
@@ -1171,17 +1196,6 @@ packages:
     resolution: {integrity: sha512-7zFpHzhnqYKrkYdUjF1HI1bzd0VygEGX8lFk4k5zVMqHEoES+P+7TKI+EvLO9WVMJ8eekdO0aDEK044xTXwPPA==}
     engines: {node: '>=0.4.0'}
     hasBin: true
-    dev: true
-
-  /ag-grid-community/28.2.1:
-    resolution: {integrity: sha512-DMZh/xD/FqYP17qJ1M92PolTYe+hrKuEaf+A4h13O6qn2x/xZQrTRGW5DgnQLR/uLMe1XXZQPKR3UKgAlKo69A==}
-    dev: true
-
-  /ag-grid-vue3/28.2.1:
-    resolution: {integrity: sha512-n7+l51zFCZm3SVT2pI0lVVwL8gsDPebqNLfEy4DS17OlV5IL7c1eNXRosv/QMu+YHOEMVcwFRWH380nIjVF/+w==}
-    dependencies:
-      ag-grid-community: 28.2.1
-      vue: 3.2.45
     dev: true
 
   /agent-base/6.0.2:

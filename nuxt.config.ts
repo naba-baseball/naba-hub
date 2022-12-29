@@ -3,8 +3,8 @@ export default defineNuxtConfig({
   modules: ["@nuxt/content", "@vueuse/nuxt"],
   css: [
     "~/assets/css/main.css",
-    "ag-grid-community/styles/ag-grid.css",
-    "ag-grid-community/styles/ag-theme-alpine.css",
+    "@ag-grid-community/styles/ag-grid.css",
+    "@ag-grid-community/styles/ag-theme-alpine.css",
   ],
   postcss: {
     plugins: {
@@ -12,7 +12,7 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
-  // content: {
-  //   useCache: true,
-  // },
+  content: {
+    useCache: true,
+  },
 });
