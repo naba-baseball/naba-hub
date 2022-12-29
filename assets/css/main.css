@@ -1,3 +1,41 @@
 @tailwind base;
 @tailwind components;
+
+@layer components {
+    .flow>*+* {
+        margin-top: var(--flow-space, 2rem);
+    }
+
+    .flow-padding>*+* {
+        padding-left: var(--flow-padding, 1.5rem);
+        padding-right: var(--flow-padding, 1.5rem);
+    }
+}
+
 @tailwind utilities;
+
+:root {
+    --flow-space: 2rem;
+}
+
+.card {
+    --flow-space: 1rem;
+}
+
+.card-title {
+    margin-top: var(--flow-space);
+    margin-left: var(--flow-space);
+    margin-right: var(--flow-space);
+
+}
+
+.card-body {
+    --padding-card: var(--flow-space);
+}
+
+.card-actions {
+    margin-left: var(--flow-space);
+    margin-right: var(--flow-space);
+    margin-bottom: var(--flow-space);
+
+}

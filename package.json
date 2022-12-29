@@ -11,6 +11,8 @@
     "@nuxt/content": "^2.3.0",
     "@tailwindcss/forms": "^0.5.3",
     "@tailwindcss/typography": "^0.5.8",
+    "@vueuse/core": "^9.9.0",
+    "@vueuse/nuxt": "^9.9.0",
     "ag-grid-community": "^28.2.1",
     "ag-grid-vue3": "^28.2.1",
     "autoprefixer": "^10.4.13",

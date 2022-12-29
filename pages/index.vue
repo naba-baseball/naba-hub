@@ -1,10 +1,12 @@
 <template>
-    <section class="prose">
-        <h1>
-            NABA Hub
-        </h1>
-        <p>
-            Search through Batting, Pitching, and Fielding stats. Compare Players.
-        </p>
-    </section>
+  <section class="flow">
+    <h1 class="text-3xl font-bold">NABA Hub</h1>
+    <div class="card max-w-md items-center flow card-bordered">
+      <div class="card-title">Batting Stats</div>
+      <p class="card-body">Search all players across all years of the league</p>
+      <div class="card-actions">
+        <NuxtLink to="/batting-stats" class="btn btn-primary">View</NuxtLink>
+      </div>
+    </div>
+  </section>
 </template>

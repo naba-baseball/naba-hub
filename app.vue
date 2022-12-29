@@ -1,11 +1,21 @@
 <template>
-  <div>
+  <div class="flow">
     <Html data-theme="lofi" />
     <NuxtLoadingIndicator />
-    <nav class="space-x-2">
+    <nav class="space-x-4 nav">
       <NuxtLink class="underline" to="/">Home</NuxtLink>
-      <NuxtLink class="underline" to="/stats">Stats</NuxtLink>
+      <NuxtLink class="underline" to="/batting-stats">Batting Stats</NuxtLink>
     </nav>
-    <NuxtPage />
+    <NuxtPage class="page" />
   </div>
 </template>
+
+<style>
+.nav {
+  margin: auto var(--flow-space);
+}
+.page {
+  margin: var(--flow-space);
+  margin-bottom: auto;
+}
+</style>
