@@ -21,22 +21,17 @@ const { data } = await useAsyncData(() =>
 );
 syncRef(data, stats, {
   direction: "ltr",
-  transform: { ltr: (left) => left.body },
+  transform: {
+    ltr: (left) =>
+      left.body,
+  },
+  // transform: {ltr: left => left.body}
 });
 const defaultColumn = {
   resizable: true,
   sortable: true,
-  filter: true,
-};
-const splitIdMap = {
-  1: "Overall",
-  2: "vs L",
-  3: "vs R",
-  21: "Playoffs",
 };
 const battingCols = useBattingColumns();
-battingCols.value.split_id.valueFormatter = (params) =>
-  splitIdMap[params.value];
 
 const gridApi = ref();
 const columnApi = ref();
@@ -56,7 +51,7 @@ const setFilters = () => {
 const handleGridReady = (params) => {
   gridApi.value = params.api;
   columnApi.value = params.columnApi;
-  setFilters();
+  // setFilters();
   sizeGrid();
 };
 
@@ -83,10 +78,6 @@ function search() {
           @input="search"
         />
       </div>
-      <span class="ml-4">
-        <b>Split Id: </b>
-        <span>1 = Overall, 2 = Vs L, 3 = Vs R, 21 = Playoffs</span>
-      </span>
       <span class="ml-4">
         <StatsDateUploaded class="inline" />
       </span>
