@@ -11,7 +11,7 @@ const battingTextHeaders = battingTextHeadersRaw.split(", ").reduce(
   {},
 );
 const splitIdCol = {
-  headerName: 'Type',
+  headerName: 'Split',
   field: 'split_id',
   filter: 'agTextColumnfilter'
 }
