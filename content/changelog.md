@@ -1,3 +1,7 @@
+# Jan 8, 2022
+- Added "search" query to the batting-stats table. So now you can include searches in urls. ex: [/batting-stats?search=Mike+Cruz](/batting-stats?search=Mike+Cruz+overall)
+- Added basic [PWA](https://web.dev/progressive-web-apps/) functionality (faster load times and some offline usability)
+
 # Dec 30, 2022
 - Switched "Type" column to "Split"
 - Added Changelog page

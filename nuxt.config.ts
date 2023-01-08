@@ -1,6 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules: ["@nuxt/content", "@vueuse/nuxt"],
+  modules: ["@nuxt/content", "@vueuse/nuxt", "@kevinmarrec/nuxt-pwa"],
   css: [
     "~/assets/css/main.css",
     "@ag-grid-community/styles/ag-grid.css",

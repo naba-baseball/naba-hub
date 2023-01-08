@@ -22,10 +22,8 @@ const { data } = await useAsyncData(() =>
 syncRef(data, stats, {
   direction: "ltr",
   transform: {
-    ltr: (left) =>
-      left.body,
+    ltr: (left) => left.body,
   },
-  // transform: {ltr: left => left.body}
 });
 const defaultColumn = {
   resizable: true,
@@ -39,25 +37,27 @@ const columnApi = ref();
 const sizeGrid = () => {
   columnApi.value.autoSizeAllColumns();
 };
-const setFilters = () => {
-  const splitIdInstance = gridApi.value.getFilterInstance("split_id");
-  splitIdInstance.setModel({
-    type: "equals",
-    filter: "1",
-  });
-  gridApi.value.onFilterChanged();
-};
 
 const handleGridReady = (params) => {
   gridApi.value = params.api;
   columnApi.value = params.columnApi;
-  // setFilters();
   sizeGrid();
 };
 
-const searchValue = ref();
+const router = useRouter();
+const query = reactive({
+  search: useRoute().query.search || "",
+});
+watch(query, (query) => {
+  //we don't wanna manipulate the route its technically not cached by the sw so won't work offline
+  if (!useOnline().value) {
+    router.replace({query: undefined})
+    return;
+  }
+  router.replace({ query: { search: query.search } });
+});
 function search() {
-  gridApi.value.setQuickFilter(searchValue.value);
+  gridApi.value.setQuickFilter(query.search);
 }
 </script>
 
@@ -74,7 +74,7 @@ function search() {
           name="search"
           type="text"
           placeholder="Search player name, team, etc"
-          v-model="searchValue"
+          v-model="query.search"
           @input="search"
         />
       </div>
