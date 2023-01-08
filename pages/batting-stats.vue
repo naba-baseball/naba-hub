@@ -42,6 +42,7 @@ const handleGridReady = (params) => {
   gridApi.value = params.api;
   columnApi.value = params.columnApi;
   sizeGrid();
+  search();
 };
 
 const router = useRouter();
