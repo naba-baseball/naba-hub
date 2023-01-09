@@ -2,40 +2,48 @@
 @tailwind components;
 
 @layer components {
-    .flow>*+* {
-        margin-top: var(--flow-space, 2rem);
-    }
+  .flow > * + * {
+    margin-top: var(--flow-space, 2rem);
+  }
 
-    .flow-padding>*+* {
-        padding-left: var(--flow-padding, 1.5rem);
-        padding-right: var(--flow-padding, 1.5rem);
-    }
+  .flow-padding > * + * {
+    padding-left: var(--flow-padding, 1.5rem);
+    padding-right: var(--flow-padding, 1.5rem);
+  }
 }
 
 @tailwind utilities;
 
 :root {
-    --flow-space: 2rem;
+  --flow-space: 2rem;
+}
+
+.card-grid {
+  display: grid;
+  gap: var(--flow-space, 2rem);
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+
+  @media screen(lg) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
 
 .card {
-    --flow-space: 1rem;
+  --flow-space: 1rem;
 }
 
 .card-title {
-    margin-top: var(--flow-space);
-    margin-left: var(--flow-space);
-    margin-right: var(--flow-space);
-
+  margin-top: var(--flow-space);
+  margin-left: var(--flow-space);
+  margin-right: var(--flow-space);
 }
 
 .card-body {
-    --padding-card: var(--flow-space);
+  --padding-card: var(--flow-space);
 }
 
 .card-actions {
-    margin-left: var(--flow-space);
-    margin-right: var(--flow-space);
-    margin-bottom: var(--flow-space);
-
+  margin-left: var(--flow-space);
+  margin-right: var(--flow-space);
+  margin-bottom: var(--flow-space);
 }

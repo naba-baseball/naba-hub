@@ -16,6 +16,7 @@ specifiers:
   daisyui: ^2.46.0
   nuxt: 3.0.0
   postcss: ^8.4.20
+  postcss-nesting: ^10.2.0
   tailwindcss: ^3.2.4
 
 devDependencies:
@@ -34,6 +35,7 @@ devDependencies:
   daisyui: 2.46.0_8f0cd5565265717623566027db86fbf0
   nuxt: 3.0.0
   postcss: 8.4.20
+  postcss-nesting: 10.2.0_postcss@8.4.20
   tailwindcss: 3.2.4
 
 packages:
@@ -362,6 +364,17 @@ packages:
     resolution: {integrity: sha512-MVbXLbTcAotOPUj0pAMhVtJ+3/kFkwJqc5qNOleOZTv6QkZZABDMS21dSrSlVswEHwrpWC03e4fWytjqKvuE2A==}
     dependencies:
       mime: 3.0.0
+    dev: true
+
+  /@csstools/selector-specificity/2.0.2_d5e47c13600a2304adeb61035602f868:
+    resolution: {integrity: sha512-IkpVW/ehM1hWKln4fCA3NzJU8KwD+kIOvPZA4cqxoJHtE21CCzjyp+Kxbu0i5I4tBNOlXPL9mjwnWlL0VEG4Fg==}
+    engines: {node: ^12 || ^14 || >=16}
+    peerDependencies:
+      postcss: ^8.2
+      postcss-selector-parser: ^6.0.10
+    dependencies:
+      postcss: 8.4.20
+      postcss-selector-parser: 6.0.11
     dev: true
 
   /@esbuild/android-arm/0.15.18:
@@ -4521,6 +4534,17 @@ packages:
     peerDependencies:
       postcss: ^8.2.14
     dependencies:
+      postcss: 8.4.20
+      postcss-selector-parser: 6.0.11
+    dev: true
+
+  /postcss-nesting/10.2.0_postcss@8.4.20:
+    resolution: {integrity: sha512-EwMkYchxiDiKUhlJGzWsD9b2zvq/r2SSubcRrgP+jujMXFzqvANLt16lJANC+5uZ6hjI7lpRmI6O8JIl+8l1KA==}
+    engines: {node: ^12 || ^14 || >=16}
+    peerDependencies:
+      postcss: ^8.2
+    dependencies:
+      '@csstools/selector-specificity': 2.0.2_d5e47c13600a2304adeb61035602f868
       postcss: 8.4.20
       postcss-selector-parser: 6.0.11
     dev: true
