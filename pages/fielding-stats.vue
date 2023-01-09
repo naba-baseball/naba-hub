@@ -3,7 +3,7 @@ import { useRouteQuery } from "@vueuse/router";
 const stats = ref([]);
 const { data } = await useAsyncData(() =>
   queryContent("stats")
-    .where({ _id: "content:stats:player_batting_stats.csv" })
+    .where({ _id: "content:stats:player_fielding_stats.csv" })
     .without([
       "player ID",
       "league_name",
@@ -25,7 +25,7 @@ syncRef(data, stats, {
     ltr: (left) => left.body,
   },
 });
-const battingCols = useBattingColumns();
+const fieldingCols = useFieldingColumns();
 const gridApi = ref();
 const columnApi = ref();
 
@@ -33,15 +33,14 @@ const sizeGrid = () => {
   columnApi.value.autoSizeAllColumns();
 };
 
+const searchQuery = useRouteQuery("search", "");
+
 const handleGridReady = (params) => {
   gridApi.value = params.api;
   columnApi.value = params.columnApi;
   sizeGrid();
   syncSearchToQuery();
 };
-
-const searchQuery = useRouteQuery("search", "");
-
 function syncSearchToQuery() {
   gridApi.value.setQuickFilter(searchQuery.value);
 }
@@ -69,7 +68,7 @@ function syncSearchToQuery() {
       </span>
     </div>
     <BaseGrid
-      :column-defs="Object.values(battingCols)"
+      :column-defs="Object.values(fieldingCols)"
       :row-data="stats"
       @grid-ready="handleGridReady"
     />

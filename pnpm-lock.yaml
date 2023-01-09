@@ -11,6 +11,7 @@ specifiers:
   '@tailwindcss/typography': ^0.5.8
   '@vueuse/core': ^9.9.0
   '@vueuse/nuxt': ^9.9.0
+  '@vueuse/router': ^9.10.0
   autoprefixer: ^10.4.13
   daisyui: ^2.46.0
   nuxt: 3.0.0
@@ -28,6 +29,7 @@ devDependencies:
   '@tailwindcss/typography': 0.5.8_tailwindcss@3.2.4
   '@vueuse/core': 9.9.0
   '@vueuse/nuxt': 9.9.0_nuxt@3.0.0
+  '@vueuse/router': 9.10.0
   autoprefixer: 10.4.13_postcss@8.4.20
   daisyui: 2.46.0_8f0cd5565265717623566027db86fbf0
   nuxt: 3.0.0
@@ -1163,6 +1165,27 @@ packages:
       - '@vue/composition-api'
       - rollup
       - supports-color
+      - vue
+    dev: true
+
+  /@vueuse/router/9.10.0:
+    resolution: {integrity: sha512-5idTkKUxDlz/d5EenSbORBItSDnAgS43SFT84rvALsaLpBCGEyFp6XsNcoktaMDAHk2XRR4N7ztPOgm8+Yz1Kg==}
+    peerDependencies:
+      vue-router: '>=4.0.0-rc.1'
+    dependencies:
+      '@vueuse/shared': 9.10.0
+      vue-demi: 0.13.11
+    transitivePeerDependencies:
+      - '@vue/composition-api'
+      - vue
+    dev: true
+
+  /@vueuse/shared/9.10.0:
+    resolution: {integrity: sha512-vakHJ2ZRklAzqmcVBL38RS7BxdBA4+5poG9NsSyqJxrt9kz0zX3P5CXMy0Hm6LFbZXUgvKdqAS3pUH1zX/5qTQ==}
+    dependencies:
+      vue-demi: 0.13.11
+    transitivePeerDependencies:
+      - '@vue/composition-api'
       - vue
     dev: true
 

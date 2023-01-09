@@ -1,9 +1,7 @@
 <template>
   <div class="flow">
     <Html data-theme="lofi" />
-    <Title>
-      NABA Hub
-    </Title>
+    <Title> NABA Hub </Title>
     <NuxtLoadingIndicator />
     <nav class="space-x-4 nav">
       <NuxtLink
@@ -17,6 +15,12 @@
         active-class="underline font-bold"
         to="/batting-stats/"
         >Batting Stats</NuxtLink
+      >
+      <NuxtLink
+        class="hover:underline"
+        active-class="underline font-bold"
+        to="/fielding-stats/"
+        >Fielding Stats</NuxtLink
       >
       <NuxtLink
         class="hover:underline"
@@ -37,5 +41,6 @@
 .page {
   margin: var(--flow-space);
   margin-bottom: auto;
+  padding-bottom: var(--flow-space, theme(spacing.4));
 }
 </style>
