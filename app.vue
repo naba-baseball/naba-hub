@@ -1,6 +1,9 @@
 <template>
   <div class="flow">
     <Html data-theme="lofi" />
+    <Title>
+      NABA Hub
+    </Title>
     <NuxtLoadingIndicator />
     <nav class="space-x-4 nav">
       <NuxtLink
