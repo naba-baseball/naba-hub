@@ -14,7 +14,7 @@
       <div class="card max-w-md items-center flow card-bordered">
         <div class="card-title">Fielding Stats</div>
         <p class="card-body">
-          Search fielding stats all players across all years of the league
+          Search fielding stats for all players across all years of the league
         </p>
         <div class="card-actions">
           <NuxtLink to="/fielding-stats/" class="btn btn-primary"
