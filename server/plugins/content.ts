@@ -14,7 +14,6 @@ export default defineNitroPlugin((nitroApp) => {
             return { ...row, split_id: splitIdMap[row.split_id] };
           }
           if (row.position) {
-            console.log('POSITION');
             const positionMap = {
               1: "pitcher",
               2: "catcher",
