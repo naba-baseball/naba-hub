@@ -12,4 +12,12 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
+  pwa:{
+    manifest:{
+      name: "NABA Hub"
+    },
+    meta: {
+      name: 'NABA Hub'
+    }
+  }
 });
