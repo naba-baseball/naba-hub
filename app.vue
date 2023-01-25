@@ -1,9 +1,30 @@
+<script setup>
+const showNotification = ref(false);
+if (useRuntimeConfig().public.NODE_ENV === "production") {
+  onMounted(async () => {
+    if ("serviceWorker" in navigator) {
+      const { Workbox } = await import("workbox-window");
+      const workbox = new Workbox("/sw.js");
+      workbox.addEventListener("installed", (event) => {
+        // If we don't do this we'll be displaying the notification after the initial installation, which isn't perferred.
+        if (event.isUpdate) {
+          // whatever logic you want to use to notify the user that they need to refresh the page.
+          showNotification.value = true;
+          //trigerUpdate
+        }
+      });
+      workbox.register();
+    }
+  });
+}
+</script>
+
 <template>
-  <div class="flow">
+  <div class="flow bg-base-100 mx">
     <Html data-theme="lofi" />
     <Title> NABA Hub </Title>
     <NuxtLoadingIndicator />
-    <nav class="space-x-4 nav">
+    <nav class="space-x">
       <NuxtLink
         class="hover:underline"
         active-class="underline font-bold"
@@ -30,17 +51,10 @@
       >
       <a href="https://github.com/Twitch0125/naba-hub">Github</a>
     </nav>
-    <NuxtPage class="page" />
+    <UpdateNotification
+      v-if="showNotification"
+      @update:model-value="showNotification = $event"
+    />
+    <NuxtPage />
   </div>
 </template>
-
-<style>
-.nav {
-  margin: auto var(--flow-space);
-}
-.page {
-  margin: var(--flow-space);
-  margin-bottom: auto;
-  padding-bottom: var(--flow-space, theme(spacing.4));
-}
-</style>

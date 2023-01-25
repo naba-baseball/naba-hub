@@ -1,3 +1,8 @@
+# Jan 24, 2022
+- New font! Rubik
+- New Update Prompt! Though you probably won't see it until the next update
+- Optimized Bundles! Quicker load times
+- Slight style tweaks
 # Jan 8, 2022 Part 2: Electric Boogaloo
 - Added fielding stats!
     - There are some `Opp_1`, `Opp_2`, `Made_1`, etc, stats I have no idea what they're supposed to mean... If you know, tell me what they mean.

@@ -3,22 +3,26 @@ export default defineNuxtConfig({
   modules: ["@nuxt/content", "@vueuse/nuxt", "@kevinmarrec/nuxt-pwa"],
   css: [
     "~/assets/css/main.css",
-    "@ag-grid-community/styles/ag-grid.css",
-    "@ag-grid-community/styles/ag-theme-alpine.css",
+    "@fontsource/rubik/variable.css",
   ],
+  runtimeConfig: {
+    public: {
+      NODE_ENV: process.env.NODE_ENV,
+    },
+  },
   postcss: {
     plugins: {
       tailwindcss: {},
       autoprefixer: {},
-      'tailwindcss/nesting': {}
+      "tailwindcss/nesting": {},
     },
   },
-  pwa:{
-    manifest:{
-      name: "NABA Hub"
+  pwa: {
+    manifest: {
+      name: "NABA Hub",
     },
     meta: {
-      name: 'NABA Hub'
-    }
-  }
+      name: "NABA Hub",
+    },
+  },
 });
