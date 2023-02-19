@@ -1,8 +1,15 @@
 export default defineEventHandler(async (event) => {
-  const res = await event.context.prisma.players.findMany({
+  const { skip, take } = getPagination(event);
+  const total = await event.context.prisma.player.count();
+  setHeader(event, "x-total-count", total);
+  const res = await event.context.prisma.player.findMany({
     orderBy: [{ last_name: "asc" }],
-    take: 25,
+    take,
+    skip,
+    include: {
+      team: { select: { name: true, _count: true } },
+    },
   });
-  setResponseHeader(event, 'x-total-count', 25)
-  return res;
+
+  return { data: res, total };
 });

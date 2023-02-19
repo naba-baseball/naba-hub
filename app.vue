@@ -46,6 +46,12 @@ if (useRuntimeConfig().public.NODE_ENV === "production") {
       <NuxtLink
         class="hover:underline"
         active-class="underline font-bold"
+        to="/players/"
+        >Players</NuxtLink
+      >
+      <NuxtLink
+        class="hover:underline"
+        active-class="underline font-bold"
         to="/changelog/"
         >Changelog</NuxtLink
       >

@@ -7,7 +7,7 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model messages {
+model Message {
   message_id       Int       @id
   subject          String?   @db.VarChar(255)
   player_id_0      Int?
@@ -35,12 +35,15 @@ model messages {
   ongoing_story_id Int?
   text_is_modified Int?      @db.TinyInt
   body             String?   @db.Text
+
+  @@map("messages")
 }
 
 /// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
-model players {
+model Player {
   player_id                   Int       @id
   team_id                     Int?
+  team                        Team?     @relation(fields: [team_id], references: [team_id])
   league_id                   Int?
   position                    Int?      @db.SmallInt
   role                        Int?      @db.SmallInt
@@ -156,51 +159,56 @@ model players {
   on_loan                     Int?      @db.TinyInt
   loan_league_id              Int?
   loan_team_id                Int?
+
+  @@map("players")
 }
 
 /// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
-model players_batting {
-  player_id                           Int  @id
+model PlayerBatting {
+  player_id                           Int   @id
+  team                                Team? @relation(fields: [team_id], references: [team_id])
   team_id                             Int?
   league_id                           Int?
-  position                            Int? @db.SmallInt
-  role                                Int? @db.SmallInt
-  batting_ratings_overall_contact     Int? @db.SmallInt
-  batting_ratings_overall_gap         Int? @db.SmallInt
-  batting_ratings_overall_eye         Int? @db.SmallInt
-  batting_ratings_overall_strikeouts  Int? @db.SmallInt
-  batting_ratings_overall_hp          Int? @db.SmallInt
-  batting_ratings_overall_power       Int? @db.SmallInt
-  batting_ratings_overall_babip       Int? @db.SmallInt
-  batting_ratings_vsr_contact         Int? @db.SmallInt
-  batting_ratings_vsr_gap             Int? @db.SmallInt
-  batting_ratings_vsr_eye             Int? @db.SmallInt
-  batting_ratings_vsr_strikeouts      Int? @db.SmallInt
-  batting_ratings_vsr_hp              Int? @db.SmallInt
-  batting_ratings_vsr_power           Int? @db.SmallInt
-  batting_ratings_vsr_babip           Int? @db.SmallInt
-  batting_ratings_vsl_contact         Int? @db.SmallInt
-  batting_ratings_vsl_gap             Int? @db.SmallInt
-  batting_ratings_vsl_eye             Int? @db.SmallInt
-  batting_ratings_vsl_strikeouts      Int? @db.SmallInt
-  batting_ratings_vsl_hp              Int? @db.SmallInt
-  batting_ratings_vsl_power           Int? @db.SmallInt
-  batting_ratings_vsl_babip           Int? @db.SmallInt
-  batting_ratings_talent_contact      Int? @db.SmallInt
-  batting_ratings_talent_gap          Int? @db.SmallInt
-  batting_ratings_talent_eye          Int? @db.SmallInt
-  batting_ratings_talent_strikeouts   Int? @db.SmallInt
-  batting_ratings_talent_hp           Int? @db.SmallInt
-  batting_ratings_talent_power        Int? @db.SmallInt
-  batting_ratings_talent_babip        Int? @db.SmallInt
-  batting_ratings_misc_bunt           Int? @db.SmallInt
-  batting_ratings_misc_bunt_for_hit   Int? @db.SmallInt
-  batting_ratings_misc_gb_hitter_type Int? @db.SmallInt
-  batting_ratings_misc_fb_hitter_type Int? @db.SmallInt
+  position                            Int?  @db.SmallInt
+  role                                Int?  @db.SmallInt
+  batting_ratings_overall_contact     Int?  @db.SmallInt
+  batting_ratings_overall_gap         Int?  @db.SmallInt
+  batting_ratings_overall_eye         Int?  @db.SmallInt
+  batting_ratings_overall_strikeouts  Int?  @db.SmallInt
+  batting_ratings_overall_hp          Int?  @db.SmallInt
+  batting_ratings_overall_power       Int?  @db.SmallInt
+  batting_ratings_overall_babip       Int?  @db.SmallInt
+  batting_ratings_vsr_contact         Int?  @db.SmallInt
+  batting_ratings_vsr_gap             Int?  @db.SmallInt
+  batting_ratings_vsr_eye             Int?  @db.SmallInt
+  batting_ratings_vsr_strikeouts      Int?  @db.SmallInt
+  batting_ratings_vsr_hp              Int?  @db.SmallInt
+  batting_ratings_vsr_power           Int?  @db.SmallInt
+  batting_ratings_vsr_babip           Int?  @db.SmallInt
+  batting_ratings_vsl_contact         Int?  @db.SmallInt
+  batting_ratings_vsl_gap             Int?  @db.SmallInt
+  batting_ratings_vsl_eye             Int?  @db.SmallInt
+  batting_ratings_vsl_strikeouts      Int?  @db.SmallInt
+  batting_ratings_vsl_hp              Int?  @db.SmallInt
+  batting_ratings_vsl_power           Int?  @db.SmallInt
+  batting_ratings_vsl_babip           Int?  @db.SmallInt
+  batting_ratings_talent_contact      Int?  @db.SmallInt
+  batting_ratings_talent_gap          Int?  @db.SmallInt
+  batting_ratings_talent_eye          Int?  @db.SmallInt
+  batting_ratings_talent_strikeouts   Int?  @db.SmallInt
+  batting_ratings_talent_hp           Int?  @db.SmallInt
+  batting_ratings_talent_power        Int?  @db.SmallInt
+  batting_ratings_talent_babip        Int?  @db.SmallInt
+  batting_ratings_misc_bunt           Int?  @db.SmallInt
+  batting_ratings_misc_bunt_for_hit   Int?  @db.SmallInt
+  batting_ratings_misc_gb_hitter_type Int?  @db.SmallInt
+  batting_ratings_misc_fb_hitter_type Int?  @db.SmallInt
+
+  @@map("players_batting")
 }
 
 /// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
-model players_career_batting_stats {
+model PlayerCareerBattingStat {
   player_id    Int    @id
   year         Int?   @db.SmallInt
   team_id      Int?
@@ -234,10 +242,12 @@ model players_career_batting_stats {
   stint        Int?   @db.SmallInt
   ubr          Float?
   war          Float?
+
+  @@map("players_career_batting_stats")
 }
 
 /// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
-model players_career_fielding_stats {
+model PlayerCareerFieldingStat {
   player_id   Int    @id
   year        Int?   @db.SmallInt
   team_id     Int?
@@ -277,10 +287,12 @@ model players_career_fielding_stats {
   framing     Float?
   arm         Float?
   zr          Float?
+
+  @@map("players_career_fielding_stats")
 }
 
 /// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
-model players_career_pitching_stats {
+model PlayerCareeerPitchingStat {
   player_id Int    @id
   year      Int?   @db.SmallInt
   team_id   Int?
@@ -339,11 +351,13 @@ model players_career_pitching_stats {
   md        Int?   @db.SmallInt
   war       Float?
   ra9war    Float?
+
+  @@map("players_career_pitching_stats")
 }
 
 /// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
-model players_fielding {
-  player_id                        Int @id
+model PlayerFielding {
+  player_id                        Int  @id
   team_id                          Int?
   league_id                        Int?
   position                         Int? @db.SmallInt
@@ -377,11 +391,12 @@ model players_fielding {
   fielding_rating_pos8             Int? @db.SmallInt
   fielding_rating_pos9             Int? @db.SmallInt
 
+  @@map("players_fielding")
 }
 
 /// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
-model players_pitching {
-  player_id                                    Int @id
+model PlayerPitching {
+  player_id                                    Int  @id
   team_id                                      Int?
   league_id                                    Int?
   position                                     Int? @db.SmallInt
@@ -439,14 +454,16 @@ model players_pitching {
   pitching_ratings_misc_stamina                Int? @db.SmallInt
   pitching_ratings_misc_ground_fly             Int? @db.SmallInt
   pitching_ratings_misc_hold                   Int? @db.SmallInt
+
+  @@map("players_pitching")
 }
 
-model teams {
-  team_id                     Int     @id
-  name                        String? @db.VarChar(50)
-  abbr                        String? @db.VarChar(50)
-  nickname                    String? @db.VarChar(50)
-  logo_file_name              String? @db.VarChar(200)
+model Team {
+  team_id                     Int             @id
+  name                        String?         @db.VarChar(50)
+  abbr                        String?         @db.VarChar(50)
+  nickname                    String?         @db.VarChar(50)
+  logo_file_name              String?         @db.VarChar(200)
   city_id                     Int?
   park_id                     Int?
   league_id                   Int?
@@ -455,18 +472,22 @@ model teams {
   nation_id                   Int?
   parent_team_id              Int?
   level                       Int?
-  prevent_any_moves           Int?    @db.TinyInt
-  human_team                  Int?    @db.TinyInt
+  prevent_any_moves           Int?            @db.TinyInt
+  human_team                  Int?            @db.TinyInt
   human_id                    Int?
   gender                      Int?
-  background_color_id         String? @db.VarChar(8)
-  text_color_id               String? @db.VarChar(8)
-  ballcaps_main_color_id      String? @db.VarChar(8)
-  ballcaps_visor_color_id     String? @db.VarChar(8)
-  jersey_main_color_id        String? @db.VarChar(8)
-  jersey_away_color_id        String? @db.VarChar(8)
-  jersey_secondary_color_id   String? @db.VarChar(8)
-  jersey_pin_stripes_color_id String? @db.VarChar(8)
-  allstar_team                Int?    @db.TinyInt
-  historical_id               String? @db.VarChar(50)
+  background_color_id         String?         @db.VarChar(8)
+  text_color_id               String?         @db.VarChar(8)
+  ballcaps_main_color_id      String?         @db.VarChar(8)
+  ballcaps_visor_color_id     String?         @db.VarChar(8)
+  jersey_main_color_id        String?         @db.VarChar(8)
+  jersey_away_color_id        String?         @db.VarChar(8)
+  jersey_secondary_color_id   String?         @db.VarChar(8)
+  jersey_pin_stripes_color_id String?         @db.VarChar(8)
+  allstar_team                Int?            @db.TinyInt
+  historical_id               String?         @db.VarChar(50)
+  players_batting             PlayerBatting[]
+  Players                     Player[]
+
+  @@map("teams")
 }
