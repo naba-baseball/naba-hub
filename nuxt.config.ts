@@ -25,4 +25,12 @@ export default defineNuxtConfig({
       name: "NABA Hub",
     },
   },
+  nitro:{
+     storage:{
+      'common': {
+        driver: 'fs',
+        base: './data/cache'
+      }
+     }
+  }
 });

@@ -1,7 +1,14 @@
 <script lang="ts" setup>
-const { data } = useNuxtData("players");
-await useLazyFetch("/api/players", {
+import type { Player } from ".prisma/client";
+
+const { data } = await useLazyFetch("/api/players", {
   key: "players",
+  default() {
+    return {
+      data: [] as Player[],
+      total: 0,
+    };
+  },
 });
 </script>
 

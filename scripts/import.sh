@@ -1,5 +1,5 @@
 #!/usr/bin/bash bash
-for filename in *.sql; do
+for filename in ./scripts/*.sql; do
 	echo "running $filename"
-	docker compose exec -i db sh -c 'exec mariadb -u root naba' < $filename;	
+	docker compose exec -T db sh -c 'exec mariadb --user=root --password=password naba' < $filename;	
 done
