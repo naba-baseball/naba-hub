@@ -19,11 +19,7 @@
     "postcss-nesting": "^11.2.1",
     "tailwindcss": "^3.2.7"
   },
-  "dependencies": {
-    "@ag-grid-community/client-side-row-model": "^29.1.0",
-    "@ag-grid-community/core": "^29.1.0",
-    "@ag-grid-community/styles": "^29.1.0",
-    "@ag-grid-community/vue3": "^29.1.0",
+  "dependencies": {,
     "@fontsource/dm-sans": "^4.5.9",
     "@fontsource/figtree": "^4.5.3",
     "@fontsource/rubik": "^4.5.14",
@@ -31,6 +27,8 @@
     "@vueuse/core": "^9.13.0",
     "@vueuse/nuxt": "^9.13.0",
     "@vueuse/router": "^9.13.0",
+    "ag-grid-community": "^29.1.0",
+    "ag-grid-vue3": "^29.1.0",
     "prisma": "^4.10.1",
     "workbox-window": "^6.5.4"
   }

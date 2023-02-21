@@ -1,3 +1,4 @@
+player ID, lastname, firstname, year, team ID, g, gs, pa, ab, h, 2b, 3b, hr, rbi, r, sb, cs, bb, hp, k, sh, sf, gdp, ibb, ci, pitches seen, vorp, split_id, team_abbr, league_abbr, team_name, league_name, league_level_id, bbrefid, bbrefminorid, OOTP pID
 356,Adame,Alex,2022,14,24,13,49,45,15,4,1,0,5,7,0,0,1,2,8,1,0,2,0,0,0,0.8,2,MC,NABA,Mexico City,North American Baseball Association,1,,,356
 356,Adame,Alex,2022,14,16,16,70,66,24,9,0,0,8,10,0,0,3,0,8,1,0,1,0,0,222,1.0,21,MC,NABA,Mexico City,North American Baseball Association,1,,,356
 356,Adame,Alex,2022,14,74,61,267,245,81,23,1,1,34,29,0,0,14,3,35,2,3,5,0,0,0,1.7,3,MC,NABA,Mexico City,North American Baseball Association,1,,,356
