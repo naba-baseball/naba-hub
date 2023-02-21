@@ -1,3 +1,4 @@
+player ID, lastname, firstname, year, team id, position, g, gs, ip, tc, po, a, e, dp, tp, pb, sb attempts, cs, plays, plays_base, team_abbr, league_abbr, team_name, league_name, league_level_id, bbref_id, bbref_minor_id, roe, opp_0, made_0, opp_1, made_1, opp_2, made_2, opp_3, made_3, opp_4, made_4, opp_5, made_5, OOTP pID
 672,Abbott,Jason,2024,7,1,17,0,25.1,2,2,0,0,0,0,0,1,0,0,0,PIT,NABA,Pittsburgh,North American Baseball Association,1,,,0,0,0,0,0,0,0,0,0,0,0,0,0,672
 672,Abbott,Jason,2025,7,1,10,0,18.1,0,0,0,0,0,0,0,2,0,0,0,PIT,NABA,Pittsburgh,North American Baseball Association,1,,,0,0,0,0,0,0,0,0,0,0,0,0,0,672
 672,Abbott,Jason,2026,7,1,16,0,25.2,7,2,4,1,0,0,0,4,1,4,4,PIT,NABA,Pittsburgh,North American Baseball Association,1,,,0,4,3,0,0,0,0,0,0,0,0,0,0,672

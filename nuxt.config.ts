@@ -17,6 +17,9 @@ export default defineNuxtConfig({
       "tailwindcss/nesting": {},
     },
   },
+  build:{
+    transpile: ['@ag-grid-community/vue3']
+  },
   pwa: {
     manifest: {
       name: "NABA Hub",
