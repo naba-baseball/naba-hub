@@ -25,7 +25,7 @@ syncRef(data, stats, {
     ltr: (left) => left.body,
   },
 });
-const battingCols = useBattingColumns();
+const cols = useBattingColumns();
 const gridApi = ref();
 const columnApi = ref();
 
@@ -69,7 +69,7 @@ function syncSearchToQuery() {
       </span>
     </div>
     <BaseGrid
-      :column-defs="Object.values(battingCols)"
+      :column-defs="Object.values(cols)"
       :row-data="stats"
       @grid-ready="handleGridReady"
     />

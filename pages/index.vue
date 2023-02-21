@@ -22,6 +22,17 @@
           >
         </div>
       </div>
+      <div class="card card-bordered | max-w-md items-center flow ">
+        <div class="card-title">Pitching Stats</div>
+        <p class="card-body">
+          Search pitching stats for all players across all years of the league
+        </p>
+        <div class="card-actions">
+          <NuxtLink to="/pitching-stats/" class="btn btn-primary"
+            >View</NuxtLink
+          >
+        </div>
+      </div>
     </div>
   </section>
 </template>
