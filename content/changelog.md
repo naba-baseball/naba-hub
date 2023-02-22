@@ -1,3 +1,8 @@
+# Feb 21, 2022
+- finally added the pitching stats. 
+    - took me like 15 minutes idk why I put it off so long
+    - its cuz I'm lazy
+
 # Jan 24, 2022
 - New font! Rubik
 - New Update Prompt! Though you probably won't see it until the next update
