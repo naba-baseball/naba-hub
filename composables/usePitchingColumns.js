@@ -1,4 +1,4 @@
-const textHeaders = "lastname, firstname, team_name, position".split(
+const textHeaders = "lastname, firstname, team_name".split(
   ", ",
 ).reduce(
   (map, str) => {
@@ -9,7 +9,7 @@ const textHeaders = "lastname, firstname, team_name, position".split(
 );
 
 const numberHeaders =
-  "year, g, gs, ip, tc, po, a, e, dp, tp, pb, sb attempts, cs, plays, plays_base, roe, opp_0, made_0, opp_1, made_1, opp_2, made_2, opp_3, made_3, opp_4, made_4, opp_5, made_5"
+  "year, g, gs, w, l, s, ip, ha, r, er, bb, hp, k, bf, ab, 1b, 2b, 3b, hr, tb, sh, sf, ci, iw, bk, wp, dp, qs, svopp, blownsv, reliefapp, cg, sho, holds, sb, cs, gb, fb, pitches, runsupport"
     .split(", ").reduce(
       (map, str) => {
         map[str] = createNumberHeader(str);
@@ -20,7 +20,7 @@ const numberHeaders =
 
 numberHeaders.year.sort = "desc";
 
-export const useFieldingColumns = () =>
-  useState("fieldingColumns", () => {
+export const usePitchingColumns = () =>
+  useState("pitchingColumns", () => {
     return { ...textHeaders, ...numberHeaders };
   });

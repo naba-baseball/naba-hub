@@ -3,7 +3,7 @@ import { useRouteQuery } from "@vueuse/router";
 const stats = ref([]);
 const { data } = await useAsyncData(() =>
   queryContent("stats")
-    .where({ _id: "content:stats:player_fielding_stats.csv" })
+    .where({ _id: "content:stats:player_pitching_stats.csv" })
     .without([
       "player ID",
       "league_name",
@@ -25,7 +25,7 @@ syncRef(data, stats, {
     ltr: (left) => left.body,
   },
 });
-const cols = useFieldingColumns();
+const cols = usePitchingColumns();
 const gridApi = ref();
 const columnApi = ref();
 

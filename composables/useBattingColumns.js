@@ -1,5 +1,5 @@
-const battingTextHeadersRaw = "lastname, firstname, team_name";
-const battingTextHeaders = battingTextHeadersRaw.split(", ").reduce(
+const textHeadersRaw = "lastname, firstname, team_name";
+const textHeaders = textHeadersRaw.split(", ").reduce(
   (map, str) => {
     map[str] = createTextHeader(str);
     return map;
@@ -11,10 +11,10 @@ const splitIdCol = {
   field: "split_id",
   filter: "agTextColumnfilter",
 };
-battingTextHeaders.split_id = splitIdCol;
-const battingNumberHeadersRaw =
+textHeaders.split_id = splitIdCol;
+const numberHeadersRaw =
   "year, g, gs, pa, ab, h, 2b, 3b, hr, rbi, r, sb, cs, bb, hp, k, sh, sf, gdp, ibb, ci, pitches seen";
-const battingNumberHeaders = battingNumberHeadersRaw.split(", ").reduce(
+const numberHeaders = numberHeadersRaw.split(", ").reduce(
   (map, str) => {
     map[str] = createNumberHeader(str);
     return map;
@@ -22,9 +22,9 @@ const battingNumberHeaders = battingNumberHeadersRaw.split(", ").reduce(
   {},
 );
 
-battingNumberHeaders.year.sort = "desc";
+numberHeaders.year.sort = "desc";
 
 export const useBattingColumns = () =>
   useState("battingColumns", () => {
-    return { ...battingTextHeaders, ...battingNumberHeaders };
+    return { ...textHeaders, ...numberHeaders };
   });
