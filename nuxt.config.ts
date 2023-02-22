@@ -17,9 +17,6 @@ export default defineNuxtConfig({
       "tailwindcss/nesting": {},
     },
   },
-  build:{
-    transpile: ['@ag-grid-community/vue3']
-  },
   pwa: {
     manifest: {
       name: "NABA Hub",
@@ -28,12 +25,12 @@ export default defineNuxtConfig({
       name: "NABA Hub",
     },
   },
-  nitro:{
-     storage:{
-      'common': {
-        driver: 'fs',
-        base: './data/cache'
-      }
-     }
-  }
+  nitro: {
+    storage: {
+      "common": {
+        driver: "fs",
+        base: "./data/cache",
+      },
+    },
+  },
 });

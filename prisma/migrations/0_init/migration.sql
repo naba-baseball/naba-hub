@@ -1,37 +1,4 @@
 -- CreateTable
-CREATE TABLE `messages` (
-    `message_id` INTEGER NOT NULL,
-    `subject` VARCHAR(255) NULL,
-    `player_id_0` INTEGER NULL,
-    `player_id_1` INTEGER NULL,
-    `player_id_2` INTEGER NULL,
-    `player_id_3` INTEGER NULL,
-    `player_id_4` INTEGER NULL,
-    `team_id_0` INTEGER NULL,
-    `team_id_1` INTEGER NULL,
-    `team_id_2` INTEGER NULL,
-    `team_id_3` INTEGER NULL,
-    `team_id_4` INTEGER NULL,
-    `league_id_0` INTEGER NULL,
-    `league_id_1` INTEGER NULL,
-    `importance` INTEGER NULL,
-    `message_type` INTEGER NULL,
-    `hype` SMALLINT NULL,
-    `sender_type` INTEGER NULL,
-    `sender_id` INTEGER NULL,
-    `recipient_id` INTEGER NULL,
-    `trade_id` INTEGER NULL,
-    `date` DATE NULL,
-    `deleted` TINYINT NULL,
-    `notify` TINYINT NULL,
-    `ongoing_story_id` INTEGER NULL,
-    `text_is_modified` TINYINT NULL,
-    `body` TEXT NULL,
-
-    PRIMARY KEY (`message_id`)
-) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-
--- CreateTable
 CREATE TABLE `players` (
     `player_id` INTEGER NOT NULL,
     `team_id` INTEGER NULL,

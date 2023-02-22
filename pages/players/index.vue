@@ -1,6 +1,5 @@
 <script lang="ts" setup>
 import type { Player } from ".prisma/client";
-
 const { data } = await useLazyFetch("/api/players", {
   key: "players",
   default() {
@@ -20,6 +19,7 @@ const { data } = await useLazyFetch("/api/players", {
         <td>Last Name</td>
         <td>First Name</td>
         <td>Team</td>
+        <td>Actions</td>
       </tr>
     </thead>
     <tbody>
@@ -29,6 +29,9 @@ const { data } = await useLazyFetch("/api/players", {
         </td>
         <td>{{ row.first_name }}</td>
         <td>{{ row.team?.name }}</td>
+        <td>
+          <NuxtLink class="link" :to="`/players/${row.player_id}`"> View </NuxtLink>
+        </td>
       </tr>
     </tbody>
   </table>
