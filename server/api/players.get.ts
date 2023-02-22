@@ -9,6 +9,7 @@ export default defineEventHandler(async (event) => {
       player_id: true,
       first_name: true,
       last_name: true,
+      position: true,
       team: true,
       player_batting: true,
       player_fielding: true,

@@ -4,8 +4,10 @@ export default defineEventHandler(async (event) => {
     where: { player_id: id },
     include: {
       team: { select: { name: true } },
+      player_batting: true,
+      player_fielding: true,
+      player_pitching: true
     },
   });
-  setResponseHeader(event, "x-total-count", 25);
   return res;
 });

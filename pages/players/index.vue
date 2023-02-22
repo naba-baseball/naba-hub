@@ -8,6 +8,9 @@ const { data } = await useLazyFetch("/api/players", {
       total: 0,
     };
   },
+  query: {
+    take: 500,
+  }
 });
 </script>
 
@@ -19,6 +22,9 @@ const { data } = await useLazyFetch("/api/players", {
         <td>Last Name</td>
         <td>First Name</td>
         <td>Team</td>
+        <td>
+          Position
+        </td>
         <td>Actions</td>
       </tr>
     </thead>
@@ -29,6 +35,9 @@ const { data } = await useLazyFetch("/api/players", {
         </td>
         <td>{{ row.first_name }}</td>
         <td>{{ row.team?.name }}</td>
+        <td>
+          {{ row.position }}
+        </td>
         <td>
           <NuxtLink class="link" :to="`/players/${row.player_id}`"> View </NuxtLink>
         </td>

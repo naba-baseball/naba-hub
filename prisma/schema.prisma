@@ -127,12 +127,12 @@ model Player {
   on_loan                       Int?                         @db.TinyInt
   loan_league_id                Int?
   loan_team_id                  Int?
-  player_batting                PlayerBatting[]
   players_career_batting_stats  PlayersCareerBattingStats[]
   players_career_pitching_stats PlayersCareerPitchingStats[]
   players_career_fielding_stats PlayersCareerFieldingStats[]
-  player_fielding               PlayerFielding[]
-  player_pitching               PlayerPitching[]
+  player_batting                PlayerBatting?
+  player_fielding               PlayerFielding?
+  player_pitching               PlayerPitching?
 
   @@map("players")
 }
