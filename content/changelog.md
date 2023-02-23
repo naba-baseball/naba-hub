@@ -1,3 +1,7 @@
+# Feb 22, 2023
+- Added ERA 😱
+    - if you see an ERA with Infinity, that means they did really bad
+    - if you see an ERA with NaN, no idea
 # Feb 21, 2022
 - finally added the pitching stats. 
     - took me like 15 minutes idk why I put it off so long
