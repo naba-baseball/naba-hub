@@ -24,8 +24,5 @@ const numberHeaders =
     );
 
 numberHeaders.year.sort = "desc";
-
 export const usePitchingColumns = () =>
-  useState("pitchingColumns", () => {
-    return { ...textHeaders, ...numberHeaders };
-  });
+    ({ ...textHeaders, ...numberHeaders });

@@ -20,7 +20,4 @@ const numberHeaders =
 
 numberHeaders.year.sort = "desc";
 
-export const useFieldingColumns = () =>
-  useState("fieldingColumns", () => {
-    return { ...textHeaders, ...numberHeaders };
-  });
+export const useFieldingColumns = () =>({ ...textHeaders, ...numberHeaders })

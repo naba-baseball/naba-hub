@@ -25,7 +25,14 @@ syncRef(data, stats, {
     ltr: (left) => left.body,
   },
 });
-const cols = usePitchingColumns();
+const cols = Object.values(usePitchingColumns());
+const computedHeaders = [{
+  field: 'ERA',
+  filter: 'agNumberColumnFilter',
+  valueGetter: params => (9 * params.data.er / params.data.ip).toFixed(2)
+}]
+cols.splice(5, computedHeaders.length, ...computedHeaders)
+
 const gridApi = ref();
 const columnApi = ref();
 
@@ -68,7 +75,7 @@ function syncSearchToQuery() {
       </span>
     </div>
     <BaseGrid
-      :column-defs="Object.values(cols)"
+      :column-defs="cols"
       :row-data="stats"
       @grid-ready="handleGridReady"
     />
