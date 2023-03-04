@@ -24,4 +24,4 @@ const numberHeaders = numberHeadersRaw.split(", ").reduce(
 
 numberHeaders.year.sort = "desc";
 
-export const useBattingColumns = () =>({ ...textHeaders, ...numberHeaders })
+export const useBattingColumns = () => ({ ...textHeaders, ...numberHeaders });
