@@ -31,6 +31,31 @@
     margin-right: var(--flow-space);
   }
 
+  .px {
+    padding-left: var(--flow-space);
+    padding-right: var(--flow-space);
+  }
+
+  .py {
+    padding-top: var(--flow-space);
+    padding-bottom: var(--flow-space);
+  }
+
+  .pt {
+    padding-top: var(--flow-space);
+  }
+
+  .pb {
+    padding-bottom: var(--flow-space);
+  }
+
+  .pl {
+    padding-left: var(--flow-space);
+  }
+  .pr {
+    padding-right: var(--flow-space);
+  }
+
   .space-x>*~* {
     --flow-space: 1rem;
     margin-left: var(--flow-space);
