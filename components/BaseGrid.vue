@@ -12,7 +12,7 @@ const defaultColumn = {
 };
 </script>
 <template>
-  <ClientOnly>
+  <ClientOnly v-if="AgGridVue">
     <AgGridVue
       v-bind="props"
       class="ag-theme-alpine h-[700px]"
