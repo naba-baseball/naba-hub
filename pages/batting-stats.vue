@@ -50,12 +50,12 @@ function syncSearchToQuery() {
 <template>
   <div class="flow">
     <div>
-      <div class="form-control max-w-md inline-block">
+      <div class="form-control inline-block">
         <label class="label" for="search">
           <span class="label-text">Search</span>
         </label>
         <input
-          class="input input-bordered"
+          class="input input-bordered w-80"
           id="search"
           name="search"
           type="text"
@@ -64,14 +64,10 @@ function syncSearchToQuery() {
           @input="syncSearchToQuery"
         />
       </div>
-      <span class="ml-4">
+      <span class="md:ml">
         <StatsDateUploaded class="inline" />
       </span>
     </div>
-    <BaseGrid
-      :column-defs="cols"
-      :row-data="stats"
-      @grid-ready="handleGridReady"
-    />
+    <BaseGrid :column-defs="cols" :row-data="stats" @grid-ready="handleGridReady" />
   </div>
 </template>

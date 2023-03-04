@@ -24,6 +24,13 @@
     margin-bottom: var(--flow-space);
   }
 
+  .ml {
+    margin-left: var(--flow-space);
+  }
+  .mr {
+    margin-right: var(--flow-space);
+  }
+
   .space-x>*~* {
     --flow-space: 1rem;
     margin-left: var(--flow-space);

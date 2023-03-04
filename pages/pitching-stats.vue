@@ -26,12 +26,6 @@ syncRef(data, stats, {
   },
 });
 const cols = Object.values(usePitchingColumns());
-const computedHeaders = [{
-  field: 'ERA',
-  filter: 'agNumberColumnFilter',
-  valueGetter: params => (9 * params.data.er / params.data.ip).toFixed(2)
-}]
-cols.splice(5, computedHeaders.length, ...computedHeaders)
 
 const gridApi = ref();
 const columnApi = ref();
@@ -56,12 +50,12 @@ function syncSearchToQuery() {
 <template>
   <div class="flow">
     <div>
-      <div class="form-control max-w-md inline-block">
+      <div class="form-control inline-block">
         <label class="label" for="search">
           <span class="label-text">Search</span>
         </label>
         <input
-          class="input input-bordered"
+          class="input input-bordered w-80"
           id="search"
           name="search"
           type="text"
@@ -70,7 +64,7 @@ function syncSearchToQuery() {
           @input="syncSearchToQuery"
         />
       </div>
-      <span class="ml-4">
+      <span class="md:ml">
         <StatsDateUploaded class="inline" />
       </span>
     </div>
