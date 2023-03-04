@@ -26,8 +26,8 @@ syncRef(data, stats, {
   },
 });
 const cols = Object.values(useBattingColumns());
-const gridApi = ref();
-const columnApi = ref();
+const gridApi = shallowRef();
+const columnApi = shallowRef();
 
 const sizeGrid = () => {
   columnApi.value.autoSizeAllColumns();
@@ -37,37 +37,18 @@ const handleGridReady = (params) => {
   gridApi.value = params.api;
   columnApi.value = params.columnApi;
   sizeGrid();
-  syncSearchToQuery();
 };
 
 const searchQuery = useRouteQuery("search", "");
 
-function syncSearchToQuery() {
-  gridApi.value.setQuickFilter(searchQuery.value);
-}
+watch(searchQuery, () => {
+  gridApi.value?.setQuickFilter(searchQuery.value);
+});
 </script>
 
 <template>
   <div class="flow">
-    <div>
-      <div class="form-control inline-block">
-        <label class="label" for="search">
-          <span class="label-text">Search</span>
-        </label>
-        <input
-          class="input input-bordered w-80"
-          id="search"
-          name="search"
-          type="text"
-          placeholder="Search player name, team, etc"
-          v-model="searchQuery"
-          @input="syncSearchToQuery"
-        />
-      </div>
-      <span class="md:ml">
-        <StatsDateUploaded class="inline" />
-      </span>
-    </div>
+    <BaseGridSearch v-model="searchQuery" />
     <BaseGrid :column-defs="cols" :row-data="stats" @grid-ready="handleGridReady" />
   </div>
 </template>
