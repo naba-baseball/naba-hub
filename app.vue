@@ -24,7 +24,7 @@ function handleError(err){
 </script>
 
 <template>
-  <div class="flow bg-base-100 mx">
+  <div class="flow-layout mx font-sans">
     <Html data-theme="lofi" />
     <Title> NABA Hub </Title>
     <NuxtLoadingIndicator />

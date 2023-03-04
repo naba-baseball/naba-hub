@@ -1,73 +1,16 @@
-@tailwind base;
-@tailwind components;
-
-@layer components {
-  .flow>*~* {
-    margin-top: var(--flow-space, 2rem);
-  }
-
-  .mx {
-    margin-left: var(--flow-space);
-    margin-right: var(--flow-space);
-  }
-
-  .my {
-    margin-top: var(--flow-space);
-    margin-bottom: var(--flow-space);
-  }
-
-  .mt {
-    margin-top: var(--flow-space);
-  }
-
-  .mb {
-    margin-bottom: var(--flow-space);
-  }
-
-  .ml {
-    margin-left: var(--flow-space);
-  }
-  .mr {
-    margin-right: var(--flow-space);
-  }
-
-  .px {
-    padding-left: var(--flow-space);
-    padding-right: var(--flow-space);
-  }
-
-  .py {
-    padding-top: var(--flow-space);
-    padding-bottom: var(--flow-space);
-  }
-
-  .pt {
-    padding-top: var(--flow-space);
-  }
-
-  .pb {
-    padding-bottom: var(--flow-space);
-  }
-
-  .pl {
-    padding-left: var(--flow-space);
-  }
-  .pr {
-    padding-right: var(--flow-space);
-  }
-
-  .space-x>*~* {
-    --flow-space: 1rem;
-    margin-left: var(--flow-space);
-  }
-}
-
-@tailwind utilities;
-
 :root {
   --flow-space: 2rem;
 }
 
 html {
   text-rendering: optimizeLegibility;
+}
+.flow-layout>*~* {
+  margin-top: var(--flow-space, 2rem);
+}
+
+
+.space-x>*~* {
+  --flow-space: 1rem;
+  margin-left: var(--flow-space);
 }

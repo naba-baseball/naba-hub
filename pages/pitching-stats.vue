@@ -47,7 +47,7 @@ watch(searchQuery, () => {
 </script>
 
 <template>
-  <div class="flow">
+  <div class="flow-layout">
     <BaseGridSearch v-model="searchQuery" />
     <BaseGrid :column-defs="cols" :row-data="stats" @grid-ready="handleGridReady" />
   </div>
