@@ -18,14 +18,14 @@ if (useRuntimeConfig().public.NODE_ENV === "production") {
   });
 }
 
-function handleError(err){
-  console.error(err)
+function handleError(err) {
+  console.error(err);
 }
 </script>
 
 <template>
   <div class="flow-layout mx font-sans">
-    <Html data-theme="lofi" />
+    <Html class="dark" />
     <Title> NABA Hub </Title>
     <NuxtLoadingIndicator />
     <nav class="space-x">

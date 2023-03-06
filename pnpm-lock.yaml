@@ -1,6 +1,8 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@anu-vue/nuxt': ^0.12.0
+  '@anu-vue/preset-theme-default': ^0.12.0
   '@fontsource/rubik': ^4.5.14
   '@kevinmarrec/nuxt-pwa': ^0.14.1
   '@nuxt/content': ^2.4.3
@@ -20,6 +22,8 @@ specifiers:
   workbox-window: ^6.5.4
 
 dependencies:
+  '@anu-vue/nuxt': 0.12.0_vdx6ojtdu2ukbacvripqqecd4u
+  '@anu-vue/preset-theme-default': 0.12.0
   '@fontsource/rubik': 4.5.14
   '@unocss/nuxt': 0.50.3_izzbjfojafr5pdiytlhmlleqm4
   '@vueuse/core': 9.13.0_vue@3.2.47
@@ -60,6 +64,28 @@ packages:
 
   /@antfu/utils/0.7.2:
     resolution: {integrity: sha512-vy9fM3pIxZmX07dL+VX1aZe7ynZ+YyB0jY+jE6r3hOK6GNY2t6W8rzpFC4tgpbXUYABkFQwgJq2XYXlxbXAI0g==}
+
+  /@anu-vue/nuxt/0.12.0_vdx6ojtdu2ukbacvripqqecd4u:
+    resolution: {integrity: sha512-sqqIDxmjrKVvEzh3lAveLusGjolC8Ad0S0NDitHUzUPiG7H2DIxkFMuRZvi1PZbEVf0Y04R4arYScQGvDc8VrA==}
+    dependencies:
+      '@css-render/vue3-ssr': 0.15.12_vue@3.2.47
+      '@nuxt/kit': 3.2.3
+      anu-vue: 0.12.0_ehavcuwzer4c6pjm3k5xottztu
+      defu: 6.1.2
+    transitivePeerDependencies:
+      - '@unocss/reset'
+      - '@vueuse/core'
+      - rollup
+      - supports-color
+      - vue
+      - vue-router
+    dev: false
+
+  /@anu-vue/preset-theme-default/0.12.0:
+    resolution: {integrity: sha512-a835rCYXo3heLW+Zfucdr+i/GqgbQQgiAfWoYyNL3CzJIUc3ZDu/EgiCBIquKhGJQqJEGG4sYmMrQh2vjKls0Q==}
+    dependencies:
+      defu: 6.1.2
+    dev: false
 
   /@azure/abort-controller/1.1.0:
     resolution: {integrity: sha512-TrRLIoSQVzfAJX9H1JeFjzAoDGcoK1IYX1UImfceTZpsyYfWr09Ss1aHW1y5TrrR3iq6RZLBwJ3E24uwPhwahw==}
@@ -652,6 +678,14 @@ packages:
       mime: 3.0.0
     dev: false
 
+  /@css-render/vue3-ssr/0.15.12_vue@3.2.47:
+    resolution: {integrity: sha512-AQLGhhaE0F+rwybRCkKUdzBdTEM/5PZBYy+fSYe1T9z9+yxMuV/k7ZRqa4M69X+EI1W8pa4kc9Iq2VjQkZx4rg==}
+    peerDependencies:
+      vue: ^3.0.11
+    dependencies:
+      vue: 3.2.47
+    dev: false
+
   /@esbuild/android-arm/0.16.17:
     resolution: {integrity: sha512-N9x1CMXVhtWEAMS7pNNONyA14f71VPQN9Cnavj1XQh6T7bskqiLLrSca4O0Vr8Wdcga943eThxnVp3JLnBMYtw==}
     engines: {node: '>=12'}
@@ -1025,6 +1059,16 @@ packages:
     requiresBuild: true
     dev: false
     optional: true
+
+  /@floating-ui/core/1.2.2:
+    resolution: {integrity: sha512-FaO9KVLFnxknZaGWGmNtjD2CVFuc0u4yeGEofoyXO2wgRA7fLtkngT6UB0vtWQWuhH3iMTZZ/Y89CMeyGfn8pA==}
+    dev: false
+
+  /@floating-ui/dom/1.2.3:
+    resolution: {integrity: sha512-lK9cZUrHSJLMVAdCvDqs6Ug8gr0wmqksYiaoj/bxj2gweRQkSuhg2/V6Jswz2KiQ0RAULbqw1oQDJIMpQ5GfGA==}
+    dependencies:
+      '@floating-ui/core': 1.2.2
+    dev: false
 
   /@fontsource/rubik/4.5.14:
     resolution: {integrity: sha512-EvMK3kkeAgKkk8qAeT4PjpyAYyu72pIlJm+SXJ5vR/xhCX2yj2xoq3+YS38rPmPcCAnrAVONoQ3ezLxVm6jhBA==}
@@ -2380,6 +2424,21 @@ packages:
   /ansi-styles/6.2.1:
     resolution: {integrity: sha512-bN798gFfQX+viw3R7yrGWRqnrN2oRkEkUjjl4JNn4E8GxxbjtG3FbrEIIY3l8/hrwUwIeCZvi4QuOTP4MErVug==}
     engines: {node: '>=12'}
+    dev: false
+
+  /anu-vue/0.12.0_ehavcuwzer4c6pjm3k5xottztu:
+    resolution: {integrity: sha512-pf3+DRMg90LaNVK9Frhfv5eVkFK3is7j2RmcmtnmW0MIRFgFxq3aPTH243r5H7KJitWqb+G9d5mNG+MAOaBSxQ==}
+    peerDependencies:
+      '@unocss/reset': ^0.41.1
+      '@vueuse/core': ^9.6.0
+      vue-router: '4'
+    dependencies:
+      '@floating-ui/dom': 1.2.3
+      '@unocss/reset': 0.50.3
+      '@vueuse/core': 9.13.0_vue@3.2.47
+      defu: 6.1.2
+      vue: 3.2.47
+      vue-router: 4.1.6_vue@3.2.47
     dev: false
 
   /anymatch/3.1.3:
