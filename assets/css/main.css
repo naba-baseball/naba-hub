@@ -1,16 +1,16 @@
 :root {
-  --flow-space: 2rem;
+  --a-base-c: 0, 10%, 90%;
+  --a-base-color: 0, 10%, 0%;
+  --a-typography-subtitle-opacity: 70%;
+  --un-prose-headings: hsl(var(--a-base-color));
+  --un-prose-body: var(--a-typography-text-color);
+}
+
+.prose :is(pre, code) {
+  background-color: black;
+  color: white;
 }
 
 html {
   text-rendering: optimizeLegibility;
-}
-.flow-layout>*~* {
-  margin-top: var(--flow-space, 2rem);
-}
-
-
-.space-x>*~* {
-  --flow-space: 1rem;
-  margin-left: var(--flow-space);
 }

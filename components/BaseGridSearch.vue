@@ -1,30 +1,23 @@
 <script lang="ts" setup>
 const props = defineProps<{
-    modelValue?: string
-}>()
-const model = useVModel(props, 'modelValue')
-
+  modelValue?: string;
+}>();
+const model = useVModel(props, "modelValue");
 </script>
 <template>
-  <div>
-    <div class="form-control inline-block">
-      <label class="label" for="search">
-        <span class="label-text">Search</span>
-      </label>
-      <input
-        class="input input-bordered w-80"
-        id="search"
-        name="search"
-        type="text"
-        placeholder="Search player name, team, etc"
-        v-bind="$attrs"
-        v-model="model"
-      />
-    </div>
-    <span class="md:ml">
-        <slot>
-            <StatsDateUploaded class="inline" />
-        </slot>
+  <div class="flex flex-col px-flow flow-xs md:flow-base md:px-0 md:flex-row md:items-end gap-flow">
+    <AInput
+      id="search"
+      label="Search"
+      type="search"
+      name="search"
+      placeholder="Search player name, team, etc"
+      v-model="model"
+    />
+    <span>
+      <slot>
+        <StatsDateUploaded />
+      </slot>
     </span>
   </div>
 </template>
