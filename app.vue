@@ -18,9 +18,11 @@ if (useRuntimeConfig().public.NODE_ENV === "production") {
   });
 }
 
-function handleError(err){
-  console.error(err)
+function handleError(err) {
+  console.error(err);
 }
+
+const { data: count } = await useFetch("/api/count");
 </script>
 
 <template>
@@ -43,6 +45,9 @@ function handleError(err){
         >Changelog</NuxtLink
       >
       <a href="https://github.com/Twitch0125/naba-hub">Github</a>
+      <span>
+        Visited: {{ count }}
+      </span>
     </nav>
     <UpdateNotification v-if="showNotification" @update:model-value="showNotification = $event" />
     <NuxtErrorBoundary @error="handleError">
