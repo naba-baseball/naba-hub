@@ -1,2 +1,5 @@
 [build]
 edge_functions = ".netlify/edge-functions"
+
+[dev]
+framework = "nuxt3"

@@ -30,4 +30,11 @@ export default defineNuxtConfig({
       name: "NABA Hub",
     },
   },
+  nitro: {
+    routeRules: {
+      "/batting-stats": { static: true, prerender: true },
+      "/pitching-stats": { static: true, prerender: true },
+      "/fielding-stats": { static: true, prerender: true },
+    },
+  },
 });
