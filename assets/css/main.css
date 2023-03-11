@@ -5,12 +5,3 @@
 html {
   text-rendering: optimizeLegibility;
 }
-.flow-layout>*~* {
-  margin-top: var(--flow-space, 2rem);
-}
-
-
-.space-x>*~* {
-  --flow-space: 1rem;
-  margin-left: var(--flow-space);
-}

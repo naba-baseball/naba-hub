@@ -4,5 +4,7 @@ const { data } = await useAsyncData(() =>
 );
 </script>
 <template>
-  <div v-if="data"><b>Last Updated: </b> {{ data.updated }}</div>
+  <div class="text-secondary" v-if="data">
+    <span class="">Last Updated: </span> <span class=""> {{ data.updated }} </span>
+  </div>
 </template>
