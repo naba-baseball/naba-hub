@@ -3,6 +3,7 @@ New Batting Stats!
 - Batting Average (**AVG**)
 - On Base Percentage (**OBS**)
 - Slugging Percentage (**SLG**)
+- On Base Plus Slugging (**OPS**)
 
 The stat dump doesn't have a first base stat (1b), which you need for **SLG**. So I'm calculating first base like this
 ```js

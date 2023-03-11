@@ -35,7 +35,30 @@ const computedHeaders = {
     field: "SLG",
     filter: "agNumberColumnFilter",
     valueGetter: ({ data }) => {
-      return sluggingPercentage((data.h - data['2b'] - data['3b'] - data.hr), data['2b'], data['3b'], data.hr, data.ab)
+      return sluggingPercentage(
+        data.h - data["2b"] - data["3b"] - data.hr,
+        data["2b"],
+        data["3b"],
+        data.hr,
+        data.ab
+      );
+    },
+    valueFormatter: ({ value }) => formatPercentage(value),
+  },
+  ops: {
+    field: "OPS",
+    filter: "agNumberColumnFilter",
+    valueGetter: ({ data }) => {
+      return onBasePlusSlugging(
+        onBasePercentage(data.h, data.bb, data.hp, data.ab, data.sf),
+        sluggingPercentage(
+          data.h - data["2b"] - data["3b"] - data.hr,
+          data["2b"],
+          data["3b"],
+          data.hr,
+          data.ab
+        )
+      );
     },
     valueFormatter: ({ value }) => formatPercentage(value),
   },
