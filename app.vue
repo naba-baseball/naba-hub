@@ -34,7 +34,7 @@ const links = [
 
 <template>
   <div class="flow-layout mx-auto px flow-sm lg:flow max-w-screen-lg font-sans">
-    <Html class="bg-primary h-screen" />
+    <Html class="bg-base h-screen" />
     <Title> NABA Hub </Title>
     <NuxtLoadingIndicator />
     <nav class="space-x [&>a:not([aria-current=page])]:text-secondary">

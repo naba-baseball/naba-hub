@@ -1,4 +1,4 @@
-<script setup>
+<script lang="ts" setup>
 import { AgGridVue } from 'ag-grid-vue3' // the AG Grid Vue Component
 import 'ag-grid-community/styles/ag-grid.css'
 import 'ag-grid-community/styles/ag-theme-alpine.css'
@@ -6,6 +6,9 @@ import 'ag-grid-community/styles/ag-theme-alpine.css'
 const props = defineProps({
   ...AgGridVue.props,
 })
+const emit = defineEmits(['gridReady'])
+const compact = isTableCompact()
+const fullWidth = isTableFullWidth()
 const defaultColumn = {
   resizable: true,
   sortable: true,
@@ -15,19 +18,20 @@ const gridApi = shallowRef()
 const columnApi = shallowRef()
 
 const sizeGrid = () => {
-  // columnApi.value.autoSizeAllColumns();
+  columnApi.value.autoSizeAllColumns()
 }
 function handleGridReady(params) {
+  console.log('READY')
   gridApi.value = params.api
   columnApi.value = params.columnApi
   sizeGrid()
+  console.log('emit')
+  emit('gridReady', params)
 }
-const isCompact = ref(false)
-const isFullWidth = ref(false)
 const classes = computed(() => {
   return {
-    'compact': isCompact.value,
-    'full-width': isFullWidth.value,
+    'compact': compact.value,
+    'full-width w-full absolute left-0': fullWidth.value,
   }
 })
 </script>
