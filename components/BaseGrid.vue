@@ -71,9 +71,7 @@ const classes = computed(() => {
 }
 .ag-theme-alpine.compact {
   --ag-font-family: inherit;
+  --ag-font-size: 12px;
   --ag-grid-size: 3px;
-  /* --ag-row-height: 20px; */
-  /* --ag-list-item-height: 14px;
-  --ag-row-height: 14px */
 }
 </style>
