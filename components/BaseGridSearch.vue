@@ -1,12 +1,14 @@
 <script lang="ts" setup>
 const props = defineProps<{
-  modelValue?: string;
-}>();
-const model = useVModel(props, "modelValue");
+  modelValue?: string
+}>()
+const model = useVModel(props, 'modelValue')
 </script>
+
 <template>
   <div class="flex flex-col gap lg:items-end lg:flex-row">
     <FormKit
+      id="search"
       v-model="model"
       outer-class="lg:w-80 flex flow-xs"
       wrapper-class="w-full"
@@ -16,14 +18,13 @@ const model = useVModel(props, "modelValue");
       label="Search"
       type="search"
       name="search"
-      id="search"
       placeholder="Search by name, team, etc"
     >
       <template #prefixIcon>
-        <div class="i-tabler-search"></div>
+        <div class="i-tabler-search" />
       </template>
     </FormKit>
-    <div class="lg:flex-grow"></div>
+    <div class="lg:flex-grow" />
     <span>
       <slot>
         <StatsDateUploaded class="inline" />

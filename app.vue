@@ -1,35 +1,35 @@
 <script setup>
-const showNotification = ref(false);
-if (useRuntimeConfig().public.NODE_ENV === "production") {
+const showNotification = ref(false)
+if (useRuntimeConfig().public.NODE_ENV === 'production') {
   onMounted(async () => {
-    if ("serviceWorker" in navigator) {
-      const { Workbox } = await import("workbox-window");
-      const workbox = new Workbox("/sw.js");
-      workbox.addEventListener("installed", (event) => {
+    if ('serviceWorker' in navigator) {
+      const { Workbox } = await import('workbox-window')
+      const workbox = new Workbox('/sw.js')
+      workbox.addEventListener('installed', (event) => {
         // If we don't do this we'll be displaying the notification after the initial installation, which isn't perferred.
         if (event.isUpdate) {
           // whatever logic you want to use to notify the user that they need to refresh the page.
-          showNotification.value = true;
-          //trigerUpdate
+          showNotification.value = true
+          // trigerUpdate
         }
-      });
-      workbox.register();
+      })
+      workbox.register()
     }
-  });
+  })
 }
 
 function handleError(err) {
-  console.error(err);
+  console.error(err)
 }
 
 const links = [
-  { text: "Home", to: "/" },
-  { text: "Batting Stats", to: "/batting-stats/" },
-  { text: "Fielding Stats", to: "/fielding-stats/" },
-  { text: "Pitching Stats", to: "/pitching-stats/" },
-  { text: "Changelog", to: "/changelog/" },
-  { text: "Github", to: "https://github.com/Twitch0125/naba-hub" },
-];
+  { text: 'Home', to: '/' },
+  { text: 'Batting Stats', to: '/batting-stats/' },
+  { text: 'Fielding Stats', to: '/fielding-stats/' },
+  { text: 'Pitching Stats', to: '/pitching-stats/' },
+  { text: 'Changelog', to: '/changelog/' },
+  { text: 'Github', to: 'https://github.com/Twitch0125/naba-hub' },
+]
 </script>
 
 <template>
@@ -38,9 +38,9 @@ const links = [
     <Title> NABA Hub </Title>
     <NuxtLoadingIndicator />
     <nav class="space-x [&>a:not([aria-current=page])]:text-secondary">
-      <NuxtLink v-for="link in links" class="hover:underline" active-class="font-bold" :to="link.to"
-        >{{ link.text }}</NuxtLink
-      >
+      <NuxtLink v-for="link in links" :key="link.to" class="hover:underline" active-class="font-bold" :to="link.to">
+        {{ link.text }}
+      </NuxtLink>
     </nav>
     <UpdateNotification v-if="showNotification" @update:model-value="showNotification = $event" />
     <NuxtErrorBoundary @error="handleError">

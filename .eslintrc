@@ -1,0 +1,7 @@
+{
+    "extends": "@antfu",
+    "rules": {
+        "no-undef": "off",
+        "vue/require-v-for-key": "off"
+    }
+}

@@ -1,10 +1,11 @@
 <script setup>
 const { data } = await useAsyncData(() =>
-  queryContent("stats").where({ title: "Metadata" }).findOne()
-);
+  queryContent('stats').where({ title: 'Metadata' }).findOne(),
+)
 </script>
+
 <template>
-  <div class="text-secondary" v-if="data">
+  <div v-if="data" class="text-secondary">
     <span class="">Last Updated: </span> <span class=""> {{ data.updated }} </span>
   </div>
 </template>
