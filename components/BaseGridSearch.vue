@@ -28,15 +28,15 @@ const isFullWidth = isTableFullWidth()
         </template>
       </FormKit>
       <div class="lg:flex-grow" />
-      <div class="flex gap flow-xs items-center">
+      <div class="flex justify-between gap flow-xs items-center">
         <span>
           <StatsDateUploaded class="inline" />
         </span>
         <button :class="isCompact ? 'btn-primary' : 'btn-secondary'" class="btn text-xs" type="button" @click="isCompact = !isCompact">
           <div class="i-tabler-resize" />
-          condense
+          compact
         </button>
-        <button :class="isFullWidth ? 'btn-primary' : 'btn-secondary'" class="btn text-xs" type="button" @click="isFullWidth = !isFullWidth">
+        <button :class="isFullWidth ? 'btn-primary' : 'btn-secondary'" class="btn text-xs hidden lg:inline-flex" type="button" @click="isFullWidth = !isFullWidth">
           <div class="i-tabler-arrows-maximize" />
           full width
         </button>

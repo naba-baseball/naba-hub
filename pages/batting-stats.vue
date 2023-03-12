@@ -1,5 +1,4 @@
 <script setup>
-import { useRouteQuery } from '@vueuse/router'
 const stats = ref([])
 const { data } = await useAsyncData(() =>
   queryContent('stats')
@@ -25,25 +24,11 @@ syncRef(data, stats, {
     ltr: left => left.body,
   },
 })
-const cols = Object.values(useBattingColumns())
-const gridApi = shallowRef()
-const columnApi = shallowRef()
-
-const handleGridReady = (params) => {
-  gridApi.value = params.api
-  columnApi.value = params.columnApi
-}
-
-const searchQuery = useRouteQuery('search', '')
-
-watch(searchQuery, () => {
-  gridApi.value?.setQuickFilter(searchQuery.value)
-})
+const cols = Object.values(getBattingColumns())
 </script>
 
 <template>
   <div class="flow-layout">
-    <BaseGridSearch v-model="searchQuery" />
-    <BaseGrid :column-defs="cols" :row-data="stats" @grid-ready="handleGridReady" />
+    <StatGrid :cols="cols" :stats="stats" />
   </div>
 </template>

@@ -9,26 +9,22 @@ function close() {
 </script>
 
 <template>
-  <div class="flex-col inline-flex">
-    <div class="alert flex-col sm:flex-row">
-      <div>
-        <div>
-          <h3 class="font-bold">
-            Update Available!
-          </h3>
-          <div class="text-sm">
-            Refresh or click here to see new stuff
-          </div>
-        </div>
-      </div>
-      <div class="flex-none">
-        <button class="btn btn-sm" @click="reload">
-          Update
-        </button>
-        <button class="btn btn-outline btn-sm" @click="close">
-          Later
-        </button>
-      </div>
+  <div class="card card-bordered lg:(inline-flex flex-row gap)">
+    <div>
+      <h3 class="card-title">
+        Update Available!
+      </h3>
+      <p>
+        Click update to see new stuff
+      </p>
+    </div>
+    <div class="space-x">
+      <button class="btn btn-primary" @click="reload">
+        Update
+      </button>
+      <button class="btn btn-secondary" @click="close">
+        Later
+      </button>
     </div>
   </div>
 </template>

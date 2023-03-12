@@ -21,10 +21,12 @@ const cards = [
     </div>
     <div class="base-grid">
       <div v-for="card in cards" class="card card-bordered">
-        <div class="card-title">
-          {{ card.title }}
+        <div>
+          <div class="card-title">
+            {{ card.title }}
+          </div>
+          <p>{{ card.body }}</p>
         </div>
-        <p>{{ card.body }}</p>
         <div class="card-actions">
           <NuxtLink :to="card.to" class="btn btn-primary">
             View

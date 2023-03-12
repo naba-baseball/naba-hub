@@ -3,9 +3,8 @@ const textHeaders = 'lastname, firstname, team_name'.split(', ').reduce((map, st
   return map
 }, {})
 const splitIdCol = {
+  ...createTextHeader('split_id'),
   headerName: 'Split',
-  field: 'split_id',
-  filter: 'agTextColumnfilter',
 }
 textHeaders.split_id = splitIdCol
 const numberHeaders
@@ -20,11 +19,10 @@ numberHeaders.year.sort = 'desc'
 
 const computedHeaders = {
   era: {
-    field: 'ERA',
-    filter: 'agNumberColumnFilter',
+    ...createNumberHeader('ERA'),
     valueGetter: ({ data }) => earnedRunAverage(data.er, data.ip),
     valueFormatter: ({ value }) => value.toFixed(2),
   },
 }
 
-export const usePitchingColumns = () => ({ ...textHeaders, ...computedHeaders, ...numberHeaders })
+export const getPitchingColumns = () => ({ ...textHeaders, ...computedHeaders, ...numberHeaders })

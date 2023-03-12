@@ -4,9 +4,8 @@ const textHeaders = textHeadersRaw.split(', ').reduce((map, str) => {
   return map
 }, {})
 const splitIdCol = {
+  ...createTextHeader('split_id'),
   headerName: 'Split',
-  field: 'split_id',
-  filter: 'agTextColumnfilter',
 }
 textHeaders.split_id = splitIdCol
 const numberHeadersRaw
@@ -20,20 +19,17 @@ numberHeaders.year.sort = 'desc'
 
 const computedHeaders = {
   avg: {
-    field: 'AVG',
-    filter: 'agNumberColumnFilter',
+    ...createNumberHeader('AVG'),
     valueGetter: ({ data }) => battingAverage(data.h, data.ab),
     valueFormatter: ({ value }) => formatPercentage(value),
   },
   obp: {
-    field: 'OBP',
-    filter: 'agNumberColumnFilter',
+    ...createNumberHeader('OBP'),
     valueGetter: ({ data }) => onBasePercentage(data.h, data.bb, data.hp, data.ab, data.sf),
     valueFormatter: ({ value }) => formatPercentage(value),
   },
   slg: {
-    field: 'SLG',
-    filter: 'agNumberColumnFilter',
+    ...createNumberHeader('SLG'),
     valueGetter: ({ data }) => {
       return sluggingPercentage(
         data.h - data['2b'] - data['3b'] - data.hr,
@@ -46,8 +42,7 @@ const computedHeaders = {
     valueFormatter: ({ value }) => formatPercentage(value),
   },
   ops: {
-    field: 'OPS',
-    filter: 'agNumberColumnFilter',
+    ...createNumberHeader('OPS'),
     valueGetter: ({ data }) => {
       return onBasePlusSlugging(
         onBasePercentage(data.h, data.bb, data.hp, data.ab, data.sf),
@@ -64,4 +59,4 @@ const computedHeaders = {
   },
 }
 
-export const useBattingColumns = () => ({ ...textHeaders, ...computedHeaders, ...numberHeaders })
+export const getBattingColumns = () => ({ ...textHeaders, ...computedHeaders, ...numberHeaders })

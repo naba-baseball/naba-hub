@@ -1,10 +1,10 @@
 :root {
-
   --flow-space: 2rem;
   --surface: white;
   --bg-base: #f5f5f4;
   --text-secondary: #57534e;
   --text-primary: #1c1917;
+  --border-primary: #1c1917;
 }
 
 html {
