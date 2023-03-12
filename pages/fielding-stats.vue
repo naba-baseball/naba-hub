@@ -1,49 +1,44 @@
 <script setup>
-import { useRouteQuery } from "@vueuse/router";
-const stats = ref([]);
+import { useRouteQuery } from '@vueuse/router'
+const stats = ref([])
 const { data } = await useAsyncData(() =>
-  queryContent("stats")
-    .where({ _id: "content:stats:player_fielding_stats.csv" })
+  queryContent('stats')
+    .where({ _id: 'content:stats:player_fielding_stats.csv' })
     .without([
-      "player ID",
-      "league_name",
-      "vorp",
-      "team_abbr",
-      "league_abbr",
-      "league_name",
-      "league_level_id",
-      "bbrefid",
-      "bbrefminorid",
-      "OOTP pID",
-      "team ID",
+      'player ID',
+      'league_name',
+      'vorp',
+      'team_abbr',
+      'league_abbr',
+      'league_name',
+      'league_level_id',
+      'bbrefid',
+      'bbrefminorid',
+      'OOTP pID',
+      'team ID',
     ])
-    .findOne()
-);
+    .findOne(),
+)
 syncRef(data, stats, {
-  direction: "ltr",
+  direction: 'ltr',
   transform: {
-    ltr: (left) => left.body,
+    ltr: left => left.body,
   },
-});
-const cols = Object.values(useFieldingColumns());
-const gridApi = shallowRef();
-const columnApi = shallowRef();
-
-const sizeGrid = () => {
-  columnApi.value.autoSizeAllColumns();
-};
+})
+const cols = Object.values(useFieldingColumns())
+const gridApi = shallowRef()
+const columnApi = shallowRef()
 
 const handleGridReady = (params) => {
-  gridApi.value = params.api;
-  columnApi.value = params.columnApi;
-  sizeGrid();
-};
+  gridApi.value = params.api
+  columnApi.value = params.columnApi
+}
 
-const searchQuery = useRouteQuery("search", "");
+const searchQuery = useRouteQuery('search', '')
 
 watch(searchQuery, () => {
-  gridApi.value?.setQuickFilter(searchQuery.value);
-});
+  gridApi.value?.setQuickFilter(searchQuery.value)
+})
 </script>
 
 <template>

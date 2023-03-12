@@ -10,7 +10,7 @@ const model = useVModel(props, "modelValue");
       v-model="model"
       outer-class="lg:w-80 flex flow-xs"
       wrapper-class="w-full"
-      inner-class="flex items-center pl rounded border "
+      inner-class="flex items-center pl rounded border-primary bg-surface"
       input-class="border-none focus:border-none flex-grow bg-transparent"
       label-class="text-xs uppercase font-medium tracking-wide text-secondary"
       label="Search"
@@ -23,9 +23,7 @@ const model = useVModel(props, "modelValue");
         <div class="i-tabler-search"></div>
       </template>
     </FormKit>
-    <div class="lg:flex-grow">
-
-    </div>
+    <div class="lg:flex-grow"></div>
     <span>
       <slot>
         <StatsDateUploaded class="inline" />

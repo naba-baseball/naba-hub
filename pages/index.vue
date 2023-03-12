@@ -12,7 +12,7 @@ const cards = [
     <div>
       <h2 class="text-2xl font-medium">Stat Viewers</h2>
       <p class="text-secondary">
-        View stats across all years of the league for Batting, Fielding, and Pitching
+        Search and filter Batting, Fielding, and Pitching stats across all years of the league.
       </p>
     </div>
     <div class="base-grid">

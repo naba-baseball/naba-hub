@@ -29,14 +29,10 @@ const cols = Object.values(useBattingColumns());
 const gridApi = shallowRef();
 const columnApi = shallowRef();
 
-const sizeGrid = () => {
-  columnApi.value.autoSizeAllColumns();
-};
 
 const handleGridReady = (params) => {
   gridApi.value = params.api;
   columnApi.value = params.columnApi;
-  sizeGrid();
 };
 
 const searchQuery = useRouteQuery("search", "");
