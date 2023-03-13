@@ -8,8 +8,8 @@ const isFullWidth = isTableFullWidth()
 </script>
 
 <template>
-  <ClientOnly>
-    <div class="flex flex-col gap lg:items-end lg:flex-row">
+  <div class="flex flex-col gap lg:items-end lg:flex-row">
+    <ClientOnly>
       <FormKit
         id="search"
         v-model="model"
@@ -27,11 +27,13 @@ const isFullWidth = isTableFullWidth()
           <div class="i-tabler-search" />
         </template>
       </FormKit>
-      <div class="lg:flex-grow" />
-      <div class="flex justify-between gap flow-xs items-center">
-        <span>
-          <StatsDateUploaded class="inline" />
-        </span>
+    </ClientOnly>
+    <div class="lg:flex-grow" />
+    <div class="flex justify-between gap flow-xs items-center">
+      <span>
+        <StatsDateUploaded class="inline" />
+      </span>
+      <ClientOnly>
         <button :class="isCompact ? 'btn-primary' : 'btn-secondary'" class="btn text-xs" type="button" @click="isCompact = !isCompact">
           <div class="i-tabler-resize" />
           compact
@@ -40,7 +42,7 @@ const isFullWidth = isTableFullWidth()
           <div class="i-tabler-arrows-maximize" />
           full width
         </button>
-      </div>
+      </ClientOnly>
     </div>
-  </ClientOnly>
+  </div>
 </template>
