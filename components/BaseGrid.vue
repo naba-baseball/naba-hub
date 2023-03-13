@@ -46,7 +46,7 @@ const classes = computed(() => {
 <template>
   <ClientOnly v-if="AgGridVue">
     <AgGridVue
-      class="ag-theme-alpine h-[700px] border-primary rounded overflow-hidden [&_.ag-root-wrapper]:border-none"
+      class="ag-theme-alpine [&_.ag-icon-menu]:i-tabler-menu-2 [&_.ag-icon-asc]:i-tabler-arrow-narrow-up [&_.ag-icon-desc]:i-tabler-arrow-narrow-down h-[700px] border-primary rounded overflow-hidden [&_.ag-root-wrapper]:border-none"
       :class="classes"
       v-bind="{
         ...props,
