@@ -35,11 +35,11 @@ const isFullWidth = isTableFullWidth()
       </span>
       <ClientOnly>
         <button :class="isCompact ? 'btn-primary' : 'btn-secondary'" class="btn text-xs" type="button" @click="isCompact = !isCompact">
-          <div class="i-tabler-resize" />
+          <div class="i-tabler-resize w-5 h-5" />
           compact
         </button>
         <button :class="isFullWidth ? 'btn-primary' : 'btn-secondary'" class="btn text-xs hidden lg:inline-flex" type="button" @click="isFullWidth = !isFullWidth">
-          <div class="i-tabler-arrows-maximize" />
+          <div class="i-tabler-arrows-maximize w-5 h-5" />
           full width
         </button>
       </ClientOnly>
