@@ -28,6 +28,7 @@ const links = [
   { text: 'Fielding Stats', to: '/fielding-stats/' },
   { text: 'Pitching Stats', to: '/pitching-stats/' },
   { text: 'Changelog', to: '/changelog/' },
+  { text: 'NABA Dump', to: 'https://naba-dump.netlify.app' },
   { text: 'Github', to: 'https://github.com/Twitch0125/naba-hub' },
 ]
 </script>
