@@ -1,3 +1,10 @@
+# Mar 15, 2023
+My god its freaking 2:33 AM. I want to sleep.
+- new style 🧑‍🎨
+- new compact view
+- new full width view
+If you hate the new look, tell me. 
+
 # Mar 4, 2023
 New Batting Stats!
 - Batting Average (**AVG**)
