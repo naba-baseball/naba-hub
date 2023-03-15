@@ -1312,12 +1312,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@iconify-json/tabler@npm:^1.1.66":
-  version: 1.1.66
-  resolution: "@iconify-json/tabler@npm:1.1.66"
+"@iconify-json/tabler@npm:^1.1.67":
+  version: 1.1.67
+  resolution: "@iconify-json/tabler@npm:1.1.67"
   dependencies:
     "@iconify/types": "*"
-  checksum: b1d7ddfe07bf7b5ae6804176f1ead001afbe690884e93b610a93ee78954902b9b196fcd858a010c4d1ba2e3e89d74b59c77994646eafd28b11738704536f0a84
+  checksum: 52bb253a7dae842646eadb591631ee3cb58766c65712cf67b273c3bcde17fdab12ad493a92293dbd491f5c02714708d80b1c8aec03b7bf7ee4f17d16f01c0aca
   languageName: node
   linkType: hard
 
@@ -9682,7 +9682,7 @@ __metadata:
     "@antfu/eslint-config": ^0.36.0
     "@fontsource/rubik": ^4.5.14
     "@formkit/nuxt": 1.0.0-beta.15
-    "@iconify-json/tabler": ^1.1.66
+    "@iconify-json/tabler": ^1.1.67
     "@julr/unocss-preset-forms": ^0.0.3
     "@kevinmarrec/nuxt-pwa": ^0.14.1
     "@nuxt/content": ^2.5.2
