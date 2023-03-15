@@ -42,6 +42,7 @@ function handleError(err){
       <NuxtLink class="hover:underline" active-class="underline font-bold" to="/changelog/"
         >Changelog</NuxtLink
       >
+      <a href="https://naba-dump.netlify.app/">NABA Dump</a>
       <a href="https://github.com/Twitch0125/naba-hub">Github</a>
     </nav>
     <UpdateNotification v-if="showNotification" @update:model-value="showNotification = $event" />
