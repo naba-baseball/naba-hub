@@ -1,5 +1,12 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  nitro: {
+    esbuild: {
+      options: {
+        target: 'esnext',
+      },
+    },
+  },
   modules: [
     '@nuxt/content',
     '@vueuse/nuxt',
@@ -13,6 +20,7 @@ export default defineNuxtConfig({
     public: {
       NODE_ENV: process.env.NODE_ENV,
     },
+    MONGO_URL: process.env.MONGO_URL,
   },
   build: {
     transpile: ['@ag-grid-community/vue3'],
