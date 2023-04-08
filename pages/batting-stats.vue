@@ -1,8 +1,7 @@
 <script setup>
 const stats = ref([])
 const { data } = await useAsyncData(() =>
-  queryContent('stats')
-    .where({ _id: 'content:stats:player_batting_stats.csv' })
+  queryContent('stats/player_batting_stats')
     .without([
       'player ID',
       'league_name',

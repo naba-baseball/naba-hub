@@ -1,6 +1,6 @@
 <script setup>
 const { data } = await useAsyncData(() =>
-  queryContent('stats').where({ title: 'Metadata' }).findOne(),
+  queryContent('metadata').findOne(),
 )
 </script>
 
