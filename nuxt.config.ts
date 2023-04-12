@@ -7,8 +7,8 @@ export default defineNuxtConfig({
       },
     },
   },
-  experimental:{
-    renderJsonPayloads: true
+  experimental: {
+    renderJsonPayloads: true,
   },
   modules: [
     '@nuxt/content',
