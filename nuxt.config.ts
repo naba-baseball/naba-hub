@@ -7,6 +7,9 @@ export default defineNuxtConfig({
       },
     },
   },
+  experimental:{
+    renderJsonPayloads: true
+  },
   modules: [
     '@nuxt/content',
     '@vueuse/nuxt',
