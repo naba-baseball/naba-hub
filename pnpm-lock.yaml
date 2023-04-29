@@ -30,9 +30,15 @@ devDependencies:
   '@cloudflare/workers-types':
     specifier: ^4.20230404.0
     version: 4.20230404.0
+  '@formkit/auto-animate':
+    specifier: 1.0.0-beta.6
+    version: 1.0.0-beta.6
   '@formkit/nuxt':
     specifier: 1.0.0-beta.15
     version: 1.0.0-beta.15(unocss@0.50.8)(vue@3.2.47)
+  '@formkit/themes':
+    specifier: ^0.16.5
+    version: 0.16.5(unocss@0.50.8)
   '@iconify-json/tabler':
     specifier: ^1.1.74
     version: 1.1.74
@@ -66,6 +72,9 @@ devDependencies:
   nuxt:
     specifier: ^3.4.3
     version: 3.4.3(@types/node@18.16.2)(eslint@8.39.0)(typescript@4.9.5)
+  simple-git:
+    specifier: ^3.18.0
+    version: 3.18.0
   typescript:
     specifier: ^4.9.5
     version: 4.9.5
@@ -685,6 +694,16 @@ packages:
     resolution: {integrity: sha512-EvMK3kkeAgKkk8qAeT4PjpyAYyu72pIlJm+SXJ5vR/xhCX2yj2xoq3+YS38rPmPcCAnrAVONoQ3ezLxVm6jhBA==}
     dev: false
 
+  /@formkit/auto-animate@1.0.0-beta.6:
+    resolution: {integrity: sha512-PVDhLAlr+B4Xb7e+1wozBUWmXa6BFU8xUPR/W/E+TsQhPS1qkAdAsJ25keEnFrcePSnXHrOsh3tiFbEToOzV9w==}
+    dev: true
+
+  /@formkit/core@0.16.5:
+    resolution: {integrity: sha512-cr2HT3JtTaEWnrjiXkxrsbdMjLLJc73sgkX9HhgNsWMBjVdRxFlk1NHJzACsX4F/tMujCMJC6FiayIEfVC93xA==}
+    dependencies:
+      '@formkit/utils': 0.16.5
+    dev: true
+
   /@formkit/core@1.0.0-beta.15:
     resolution: {integrity: sha512-BOqUUF8iF+H9fQMsQFqc753/LBeNkMixmS3tCMpo1kjUjPq/hSmj+f1V07CqQldmQa7y1NJGClWd2mYU3uQKRA==}
     dependencies:
@@ -738,6 +757,24 @@ packages:
       '@formkit/validation': 1.0.0-beta.15
     dev: true
 
+  /@formkit/themes@0.16.5(unocss@0.50.8):
+    resolution: {integrity: sha512-ZnslUYLKIMthndH4p6L8Le3MCZRvXAvFnkNZwRJvT5MoPWkTmtNe6oBcPnjFhlwEeMQDaIc9gyO3ZJLkv60hug==}
+    peerDependencies:
+      tailwindcss: ^3.2.0
+      unocss: ^0.31.0
+      windicss: ^3.0.0
+    peerDependenciesMeta:
+      tailwindcss:
+        optional: true
+      unocss:
+        optional: true
+      windicss:
+        optional: true
+    dependencies:
+      '@formkit/core': 0.16.5
+      unocss: 0.50.8(@unocss/webpack@0.50.8)(postcss@8.4.23)(vite@4.3.3)
+    dev: true
+
   /@formkit/themes@1.0.0-beta.15(unocss@0.50.8):
     resolution: {integrity: sha512-bn1dYYVlPb6u2TEQsriXStfPgj+m7+4yKLWc2SbtmNpGqmkSCiIQjVIcHpcERHW0x0BcYzDOXnJ+vbo7SXJqyQ==}
     peerDependencies:
@@ -754,6 +791,10 @@ packages:
     dependencies:
       '@formkit/core': 1.0.0-beta.15
       unocss: 0.50.8(@unocss/webpack@0.50.8)(postcss@8.4.23)(vite@4.3.3)
+    dev: true
+
+  /@formkit/utils@0.16.5:
+    resolution: {integrity: sha512-wQ+Nx+kALW6SGc3E5dVgp7gxzN8mGVywOMslBeg7J5D6jx0KOqaS/aIFXK4agbqpkwX4HGIskc8scGsOKD0pVg==}
     dev: true
 
   /@formkit/utils@1.0.0-beta.15:
@@ -881,6 +922,18 @@ packages:
       hasha: 5.2.2
       sharp: 0.31.3
       std-env: 3.3.2
+    dev: true
+
+  /@kwsites/file-exists@1.1.1:
+    resolution: {integrity: sha512-m9/5YGR18lIwxSFDwfE3oA7bWuq9kdau6ugN4H2rJeyhFQZcG9AgSHkQtSD15a8WvTgfz9aikZMrKPHvbpqFiw==}
+    dependencies:
+      debug: 4.3.4
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
+  /@kwsites/promise-deferred@1.1.1:
+    resolution: {integrity: sha512-GaHYm+c0O9MjZRu0ongGBRbinu8gVAMd2UZjji6jVmqKtZluZnptXGWhz1E8j8D2HJ3f/yMxKAUC0b+57wncIw==}
     dev: true
 
   /@mapbox/node-pre-gyp@1.0.10:
@@ -6722,6 +6775,16 @@ packages:
       decompress-response: 6.0.0
       once: 1.4.0
       simple-concat: 1.0.1
+    dev: true
+
+  /simple-git@3.18.0:
+    resolution: {integrity: sha512-Yt0GJ5aYrpPci3JyrYcsPz8Xc05Hi4JPSOb+Sgn/BmPX35fn/6Fp9Mef8eMBCrL2siY5w4j49TA5Q+bxPpri1Q==}
+    dependencies:
+      '@kwsites/file-exists': 1.1.1
+      '@kwsites/promise-deferred': 1.1.1
+      debug: 4.3.4
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /simple-swizzle@0.2.2:

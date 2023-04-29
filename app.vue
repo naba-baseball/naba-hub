@@ -34,7 +34,9 @@ const links = [
 </script>
 
 <template>
-  <div class="flow-layout mx-auto px flow-sm lg:flow max-w-screen-lg font-sans">
+  <div
+    class="flow-layout mx-auto px flow-sm lg:flow max-w-screen-lg font-sans"
+  >
     <Html class="bg-base h-screen" />
     <Title> NABA Hub </Title>
     <NuxtLoadingIndicator />

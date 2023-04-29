@@ -2,6 +2,7 @@ import transformerVariantGroup from '@unocss/transformer-variant-group'
 import { defineConfig, toEscapedSelector as e, presetTypography, presetUno } from 'unocss'
 import { presetForms } from '@julr/unocss-preset-forms'
 import presetIcons from '@unocss/preset-icons'
+import presetFormkit from '@formkit/themes/unocss'
 
 export default defineConfig({
   theme: {
@@ -11,21 +12,20 @@ export default defineConfig({
     colors: {
       'surface': 'white',
       'bg-base': '#f5f5f4',
-      'text-secondary': '#57534e',
-      'text-primary': '#1c1917',
-      'border-primary': '#1c1917',
+      'primary': '#1c1917',
+      'secondary': '#57534e',
     },
   },
   preflights: [
     {
-      getCSS: ({ theme }) => `
+      getCSS: ({ theme, generator }) => `
     html {
       --flow-space: 2rem;
       --surface: white;
       --bg-base: ${theme.colors['bg-base']};
-      --text-secondary: ${theme.colors['text-secondary']};
-      --text-primary: ${theme.colors['text-primary']};
-      --border-primary: ${theme.colors['border-primary']};
+      --text-secondary: ${theme.colors.secondary};
+      --text-primary: ${theme.colors.primary};
+      --border-primary: ${theme.colors.primary};  
       text-rendering: optimizeLegibility;
       font-family: ${theme.fontFamily.sans || 'sans-serif'}, sans-serif;
     }
@@ -95,5 +95,5 @@ export default defineConfig({
     'border-primary': 'border border-color-[var(--border-primary)]',
   },
   transformers: [transformerVariantGroup()],
-  presets: [presetUno(), presetTypography(), presetForms(), presetIcons()],
+  presets: [presetUno(), presetTypography(), presetIcons(), presetFormkit(), presetForms()],
 })

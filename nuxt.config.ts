@@ -1,3 +1,4 @@
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   nitro: {
@@ -9,6 +10,17 @@ export default defineNuxtConfig({
   },
   experimental: {
     renderJsonPayloads: true,
+  },
+  routeRules: {
+    '/batting-stats': {
+      prerender: true,
+    },
+    '/fielding-stats': {
+      prerender: true,
+    },
+    '/pitching-stats': {
+      prerender: true,
+    },
   },
   css: ['@fontsource/rubik/variable.css', '@unocss/reset/tailwind.css'],
   modules: [
