@@ -8,7 +8,30 @@ export default defineConfig({
     fontFamily: {
       sans: 'RubikVariable',
     },
+    colors: {
+      'surface': 'white',
+      'bg-base': '#f5f5f4',
+      'text-secondary': '#57534e',
+      'text-primary': '#1c1917',
+      'border-primary': '#1c1917',
+    },
   },
+  preflights: [
+    {
+      getCSS: ({ theme }) => `
+    html {
+      --flow-space: 2rem;
+      --surface: white;
+      --bg-base: ${theme.colors['bg-base']};
+      --text-secondary: ${theme.colors['text-secondary']};
+      --text-primary: ${theme.colors['text-primary']};
+      --border-primary: ${theme.colors['border-primary']};
+      text-rendering: optimizeLegibility;
+      font-family: ${theme.fontFamily.sans || 'sans-serif'}, sans-serif;
+    }
+    `,
+    },
+  ],
   rules: [
     ['flow', { '--flow-space': '2rem' }],
     ['flow-sm', { '--flow-space': '1rem' }],
