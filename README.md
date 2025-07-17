@@ -1,5 +1,5 @@
 # NABA Hub
-This is an area for a few tools related to the North American Baseball League discord server.
+View batting, fielding, and pitching stats in a big ol' table with Search!
 
 # Development
 ## Nuxt 3
